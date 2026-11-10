@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca0mbttpobcrt"
-path="res://.godot/imported/inimigo1b.png-baa339cac6caa52071d7cd9c940e9676.ctex"
+uid="uid://dqeh8jrgguv0m"
+path="res://.godot/imported/sprint_inimigo_atacante.png-acf5f3df4b1a039c85d030dadc52976f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inimigo1b.png"
-dest_files=["res://.godot/imported/inimigo1b.png-baa339cac6caa52071d7cd9c940e9676.ctex"]
+source_file="res://Inimigos/Inimigo (Atacante)/sprint_inimigo_atacante.png"
+dest_files=["res://.godot/imported/sprint_inimigo_atacante.png-acf5f3df4b1a039c85d030dadc52976f.ctex"]
 
 [params]
 

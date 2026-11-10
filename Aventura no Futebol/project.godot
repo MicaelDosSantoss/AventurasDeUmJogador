@@ -39,6 +39,7 @@ folder_colors={
 "res://Cenario/": "red",
 "res://Cenario/Cenas/": "teal",
 "res://HUD/": "orange",
+"res://Inimigos/": "purple",
 "res://Scripts/": "yellow",
 "res://Sons/": "teal"
 }

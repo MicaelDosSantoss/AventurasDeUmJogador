@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://duws67sos7odu"]
+
+[ext_resource type="Script" uid="uid://vp2uqa26swq" path="res://Inimigos/Inimigo (Atacante)/personagem_(atacante).gd" id="1_ileuh"]
+[ext_resource type="Texture2D" uid="uid://dqeh8jrgguv0m" path="res://Inimigos/Inimigo (Atacante)/sprint_inimigo_atacante.png" id="1_r7mn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
+size = Vector2(40, 129.75)
+
+[sub_resource type="Animation" id="Animation_5wbxv"]
+resource_name = "Inimigo Atacante (Correndo)"
+step = 0.2
+
+[sub_resource type="Animation" id="Animation_ileuh"]
+resource_name = "Inimigo Atacante (Parado)"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem (Atacante)/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(16, 40, 47, 134), Rect2(83, 41, 49, 133), Rect2(150, 42, 48, 133), Rect2(217, 42, 49, 132)]
+}
+
+[sub_resource type="Animation" id="Animation_583t2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem (Atacante)/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(16, 40, 47, 134)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5wbxv"]
+_data = {
+&"Inimigo Atacante (Correndo)": SubResource("Animation_5wbxv"),
+&"Inimigo Atacante (Parado)": SubResource("Animation_ileuh"),
+&"RESET": SubResource("Animation_583t2")
+}
+
+[node name="InimigoAtacante" type="Node2D" unique_id=883794628]
+
+[node name="Personagem (Atacante)" type="CharacterBody2D" parent="." unique_id=940650816]
+script = ExtResource("1_ileuh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Personagem (Atacante)" unique_id=1120013953]
+position = Vector2(510.25, 242)
+scale = Vector2(1.2021277, 1.1044776)
+texture = ExtResource("1_r7mn4")
+region_enabled = true
+region_rect = Rect2(16, 40, 47, 134)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem (Atacante)" unique_id=1652148418]
+position = Vector2(507, 245.875)
+shape = SubResource("RectangleShape2D_l42ct")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem (Atacante)" unique_id=1035719842]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_5wbxv")

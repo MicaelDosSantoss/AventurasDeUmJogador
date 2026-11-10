@@ -21,11 +21,12 @@ func _process(delta: float) -> void:
 		velocity.x = velocidade
 		direcao = 1
 		$Sprite2D.flip_h = false
-		
 	
 	if (Input.is_action_just_pressed("pular") and is_on_floor()):
-		velocity.y = -forca_pulo
-		$AudioStreamPlayer_Pulando.play()
+		
+		if(not animando):
+			velocity.y = -forca_pulo
+			$AudioStreamPlayer_Pulando.play()
 	
 	if (is_on_floor()):
 		if ($AnimationPlayer.current_animation==""):
@@ -52,7 +53,6 @@ func _process(delta: float) -> void:
 	else:
 		$AnimationPlayer.play("pulando")
 		
-
 	move_and_slide()
 	
 func spawnar_bolar():
@@ -73,7 +73,6 @@ func curar_vida():
 		ScriptGlobal.qtd_garrafas -= 1
 		ScriptGlobal.qtd_vidas += 1
 
-
 func eliminar_inimigo(body: Node2D) -> void:
 	if( body.name == 'Coletavel (Municao)'):
 		print("Pegou o Coletavel...")
@@ -84,8 +83,6 @@ func eliminar_inimigo(body: Node2D) -> void:
 		if (ScriptGlobal.qtd_garrafas > 0 || ScriptGlobal.qtd_garrafas < 4):
 			print("Pegou o Coletavel...")
 			ScriptGlobal.qtd_garrafas += 1
-		
-		
-		
-	if ( body.name != "Personagem"):
+	
+	if ( body.name != "Personagem" && body.name != "Cenario" ):
 		body.queue_free()
