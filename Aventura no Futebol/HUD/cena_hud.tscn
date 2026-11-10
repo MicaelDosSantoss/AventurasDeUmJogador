@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b2ydnowsv56i3" path="res://qtd_vidas.tscn" id="2_4i8th"]
 [ext_resource type="PackedScene" uid="uid://5c2028nf146w" path="res://qtd_garrafas.tscn" id="3_mgfex"]
 [ext_resource type="PackedScene" uid="uid://bf2euw06oa66u" path="res://qtd_bolas.tscn" id="4_4i8th"]
+[ext_resource type="Texture2D" uid="uid://dqt6h8j56l0t1" path="res://Sprints (Hud)/Keyboard_Final.png" id="5_4g3gh"]
 
 [node name="HUD" type="Node2D" unique_id=1631860032]
 script = ExtResource("1_snlbb")
@@ -16,3 +17,8 @@ layer = 1
 [node name="Qtd_Garrafas" parent="ParallaxBackground" unique_id=1364622314 instance=ExtResource("3_mgfex")]
 
 [node name="Qtd_bolas" parent="ParallaxBackground" unique_id=1424750196 instance=ExtResource("4_4i8th")]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground" unique_id=1102571296]
+position = Vector2(1005, 523.00006)
+scale = Vector2(0.43829134, 0.35641894)
+texture = ExtResource("5_4g3gh")
