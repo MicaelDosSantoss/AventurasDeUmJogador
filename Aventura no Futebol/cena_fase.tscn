@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://b7tvjc3w8f4rp"]
+
+[ext_resource type="Texture2D" uid="uid://c1cwsitvntpyc" path="res://Cenario/Sprint_Obstaculos/Chão (Campo de Futebol).png" id="1_5fdea"]
+[ext_resource type="PackedScene" uid="uid://dimdvq6x3u6kx" path="res://HUD/cena_hud.tscn" id="2_6bdly"]
+[ext_resource type="Texture2D" uid="uid://nk00jd3yaks7" path="res://Cenario/Sprint_Obstaculos/Arqui-bancada.png" id="2_v5pcj"]
+[ext_resource type="PackedScene" uid="uid://bnj0376x3ef1h" path="res://Cenario/Cenas/Escada_Amarela.tscn" id="3_2r50s"]
+[ext_resource type="PackedScene" uid="uid://l4g8eyoa7oe4" path="res://Cenario/Cenas/chao_arquibancada.tscn" id="3_j1lpk"]
+[ext_resource type="PackedScene" uid="uid://w1q8ofvc4opa" path="res://cena_jogador2.tscn" id="3_v5pcj"]
+[ext_resource type="PackedScene" uid="uid://fmqjgt5hiwro" path="res://nuvem.tscn" id="6_08fst"]
+[ext_resource type="PackedScene" uid="uid://5diof0nplroo" path="res://coletavel_municao.tscn" id="7_4lqq5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
+size = Vector2(156.5, 1388.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r67k"]
+size = Vector2(4166.625, 44.5)
+
+[node name="Fase" type="Node2D" unique_id=934340607]
+position = Vector2(0, 6)
+
+[node name="Nuvem" parent="." unique_id=2085575285 instance=ExtResource("6_08fst")]
+position = Vector2(0, -6)
+
+[node name="HUD" parent="." unique_id=1631860032 instance=ExtResource("2_6bdly")]
+position = Vector2(677, -211)
+
+[node name="Cenario" type="StaticBody2D" parent="." unique_id=519029942]
+position = Vector2(583, 608)
+
+[node name="Parede_Invicivel (Atrás)" type="CollisionShape2D" parent="Cenario" unique_id=239734942]
+position = Vector2(-472, -717.625)
+shape = SubResource("RectangleShape2D_l42ct")
+
+[node name="Chão" type="StaticBody2D" parent="Cenario" unique_id=2096005540]
+
+[node name="Colision" type="CollisionShape2D" parent="Cenario/Chão" unique_id=946560048]
+position = Vector2(1531, -98.75)
+shape = SubResource("RectangleShape2D_3r67k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cenario/Chão" unique_id=625240459]
+position = Vector2(248.50012, -64.75)
+scale = Vector2(1.1606104, 2.0932205)
+texture = ExtResource("1_5fdea")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Cenario/Chão" unique_id=1865989778]
+position = Vector2(1818, -65)
+scale = Vector2(1.1606104, 2.0932205)
+texture = ExtResource("1_5fdea")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Cenario/Chão" unique_id=1528413212]
+position = Vector2(3385, -65)
+scale = Vector2(1.1606104, 2.0932205)
+texture = ExtResource("1_5fdea")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cenario" unique_id=168321105]
+position = Vector2(715.9999, -581)
+rotation = -3.1415925
+scale = Vector2(1.8316501, -1.6441041)
+texture = ExtResource("2_v5pcj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Cenario" unique_id=1053373040]
+position = Vector2(3201, -581)
+rotation = -3.1415925
+scale = Vector2(1.8316501, -1.6441041)
+texture = ExtResource("2_v5pcj")
+
+[node name="ChaoArquibancada" parent="Cenario" unique_id=1960767710 instance=ExtResource("3_j1lpk")]
+position = Vector2(716, -538)
+scale = Vector2(0.9199951, 1)
+
+[node name="ChaoArquibancada2" parent="Cenario" unique_id=1699885057 instance=ExtResource("3_j1lpk")]
+position = Vector2(1314.0001, -730)
+scale = Vector2(0.9199951, 1)
+
+[node name="EscadaAmarela" parent="Cenario" unique_id=1427042653 instance=ExtResource("3_2r50s")]
+position = Vector2(388.99994, -362.00003)
+scale = Vector2(1.8254468, 2.0272195)
+
+[node name="Coletavel_Municao" parent="Cenario" unique_id=230571242 instance=ExtResource("7_4lqq5")]
+position = Vector2(615, -156)
+
+[node name="Jogador2" parent="." unique_id=174878411 instance=ExtResource("3_v5pcj")]
+position = Vector2(1205, -101)

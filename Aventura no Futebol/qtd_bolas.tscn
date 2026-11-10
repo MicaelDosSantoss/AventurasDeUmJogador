@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bf2euw06oa66u"]
+
+[ext_resource type="Script" uid="uid://08blnidlcofc" path="res://Scripts/qtd_bolas.gd" id="1_66tfx"]
+[ext_resource type="Texture2D" uid="uid://bglnuovh8jvvb" path="res://Bola.png" id="1_i6k3j"]
+[ext_resource type="FontFile" uid="uid://3qijlxao1vml" path="res://Pixel Game.otf" id="2_4hkf1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eh75g"]
+font = ExtResource("2_4hkf1")
+font_size = 50
+
+[node name="Qtd_bolas" type="Node2D" unique_id=1424750196]
+script = ExtResource("1_66tfx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=873746012]
+position = Vector2(33.000004, 167)
+scale = Vector2(0.036682613, 0.037480056)
+texture = ExtResource("1_i6k3j")
+
+[node name="Label" type="Label" parent="." unique_id=1793858496]
+offset_left = 64.0
+offset_top = 147.0
+offset_right = 114.0
+offset_bottom = 199.0
+text = "X 0"
+label_settings = SubResource("LabelSettings_eh75g")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://fmqjgt5hiwro"]
+
+[ext_resource type="Script" uid="uid://c8f5n8p55716d" path="res://nuvem.gd" id="1_qtmqx"]
+[ext_resource type="Texture2D" uid="uid://blrk112lkwl8x" path="res://Cenario/Sprint_Obstaculos/Nuvem.png" id="1_ss1wn"]
+
+[node name="Nuvem" type="Node2D" unique_id=2085575285]
+script = ExtResource("1_qtmqx")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1615021988]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2145555305]
+position = Vector2(3506, -675)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=192858426]
+texture = ExtResource("1_ss1wn")

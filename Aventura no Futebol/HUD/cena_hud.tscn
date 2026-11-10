@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dimdvq6x3u6kx"]
+
+[ext_resource type="Script" uid="uid://0jmnwpsuecei" path="res://HUD/script_hud.gd" id="1_snlbb"]
+[ext_resource type="PackedScene" uid="uid://b2ydnowsv56i3" path="res://qtd_vidas.tscn" id="2_4i8th"]
+[ext_resource type="PackedScene" uid="uid://5c2028nf146w" path="res://qtd_garrafas.tscn" id="3_mgfex"]
+[ext_resource type="PackedScene" uid="uid://bf2euw06oa66u" path="res://qtd_bolas.tscn" id="4_4i8th"]
+
+[node name="HUD" type="Node2D" unique_id=1631860032]
+script = ExtResource("1_snlbb")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=178266226]
+layer = 1
+
+[node name="Qtd_Vidas" parent="ParallaxBackground" unique_id=1758186151 instance=ExtResource("2_4i8th")]
+
+[node name="Qtd_Garrafas" parent="ParallaxBackground" unique_id=1364622314 instance=ExtResource("3_mgfex")]
+
+[node name="Qtd_bolas" parent="ParallaxBackground" unique_id=1424750196 instance=ExtResource("4_4i8th")]

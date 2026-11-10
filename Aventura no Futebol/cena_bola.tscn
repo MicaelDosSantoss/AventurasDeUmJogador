@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cxghpgoyxl6f8"]
+
+[ext_resource type="Script" uid="uid://bcx25ljmvbjn2" path="res://script_bola.gd" id="1_54ixj"]
+[ext_resource type="Texture2D" uid="uid://bglnuovh8jvvb" path="res://Bola.png" id="1_a57ln"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a57ln"]
+radius = 19.0
+
+[sub_resource type="Animation" id="Animation_54ixj"]
+resource_name = "movendo"
+length = 0.6
+step = 0.2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eetmf"]
+_data = {
+&"movendo": SubResource("Animation_54ixj")
+}
+
+[node name="Bola" type="Node2D" unique_id=1346768559]
+position = Vector2(567, 333)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1225812022]
+script = ExtResource("1_54ixj")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1767896318]
+position = Vector2(0.50001115, 1.5000088)
+scale = Vector2(0.034290284, 0.034290265)
+texture = ExtResource("1_a57ln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=554890837]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_a57ln")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=452037294]
+libraries/ = SubResource("AnimationLibrary_eetmf")
+autoplay = &"movendo"

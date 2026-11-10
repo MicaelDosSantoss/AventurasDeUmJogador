@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://5c2028nf146w"]
+
+[ext_resource type="Script" uid="uid://dpmfp3wxcu055" path="res://Scripts/qtd_garrafas.gd" id="1_k20ns"]
+[ext_resource type="Texture2D" uid="uid://dtntoi28holwg" path="res://HUD/Sprint/Garrafas.png" id="2_nb1lr"]
+
+[sub_resource type="Animation" id="Animation_cqx04"]
+resource_name = "Garrafas (1)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 400, 642, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_a1xdi"]
+resource_name = "Garrafas (2)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 208, 642, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_eh41v"]
+resource_name = "Garrafas (3)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(8, 0, 642, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_lyqy3"]
+resource_name = "Garrafas (Sem nada)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 592, 642, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_cd8vv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 592, 642, 200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f2yvq"]
+_data = {
+&"Garrafas (1)": SubResource("Animation_cqx04"),
+&"Garrafas (2)": SubResource("Animation_a1xdi"),
+&"Garrafas (3)": SubResource("Animation_eh41v"),
+&"Garrafas (Sem nada)": SubResource("Animation_lyqy3"),
+&"RESET": SubResource("Animation_cd8vv")
+}
+
+[node name="Qtd_Garrafas" type="Node2D" unique_id=1364622314]
+script = ExtResource("1_k20ns")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=954110660]
+position = Vector2(78.99999, 99.99999)
+scale = Vector2(0.2056075, 0.23000006)
+texture = ExtResource("2_nb1lr")
+region_enabled = true
+region_rect = Rect2(0, 592, 642, 200)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1537927493]
+libraries/ = SubResource("AnimationLibrary_f2yvq")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bnj0376x3ef1h"]
+
+[ext_resource type="Texture2D" uid="uid://ddwmv1fmfdnpf" path="res://Cenario/Sprint_Obstaculos/EscadaAmarela.png" id="1_mh6wh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
+size = Vector2(46, 10)
+
+[node name="EscadaAmarela" type="Node2D" unique_id=1427042653]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1852136679]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1208038049]
+position = Vector2(-1, 0)
+texture = ExtResource("1_mh6wh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=129094035]
+shape = SubResource("RectangleShape2D_l42ct")
