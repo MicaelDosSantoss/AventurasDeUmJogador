@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://w1q8ofvc4opa" path="res://cena_jogador2.tscn" id="3_v5pcj"]
 [ext_resource type="PackedScene" uid="uid://fmqjgt5hiwro" path="res://nuvem.tscn" id="6_08fst"]
 [ext_resource type="PackedScene" uid="uid://5diof0nplroo" path="res://coletavel_municao.tscn" id="7_4lqq5"]
+[ext_resource type="PackedScene" uid="uid://cp2dc6ckovvj2" path="res://coletavel_garrafas.tscn" id="8_b52ro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
 size = Vector2(156.5, 1388.75)
@@ -76,8 +77,13 @@ scale = Vector2(0.9199951, 1)
 position = Vector2(388.99994, -362.00003)
 scale = Vector2(1.8254468, 2.0272195)
 
-[node name="Coletavel_Municao" parent="Cenario" unique_id=230571242 instance=ExtResource("7_4lqq5")]
+[node name="Coletaveis" type="StaticBody2D" parent="Cenario" unique_id=208766805]
 position = Vector2(615, -156)
+
+[node name="Coletavel_Municao" parent="Cenario/Coletaveis" unique_id=230571242 instance=ExtResource("7_4lqq5")]
+
+[node name="coletavel_garrafas" parent="Cenario/Coletaveis" unique_id=746245656 instance=ExtResource("8_b52ro")]
+position = Vector2(771, -653)
 
 [node name="Jogador2" parent="." unique_id=174878411 instance=ExtResource("3_v5pcj")]
 position = Vector2(1205, -101)

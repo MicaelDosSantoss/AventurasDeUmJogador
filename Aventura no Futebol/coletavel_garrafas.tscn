@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cp2dc6ckovvj2"]
+
+[ext_resource type="Texture2D" uid="uid://bpuhluihthkaa" path="res://Cenario/Sprint_Coletaveis/Coletaveis_Garrafas.png" id="1_5r6eq"]
+[ext_resource type="Script" uid="uid://cmo8y87t6oejq" path="res://Scripts/coletavel_(garrafas).gd" id="1_cchbt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
+size = Vector2(94.75, 78.5)
+
+[sub_resource type="Animation" id="Animation_cchbt"]
+resource_name = "Coletavel Garrafas (Animação Padrão)"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coletavel (Garrafas)/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(82, 229, 198, 153), Rect2(320, 230, 192, 152), Rect2(565, 230, 196, 151), Rect2(798, 230, 194, 152), Rect2(1030, 230, 198, 151), Rect2(1263, 230, 194, 151)]
+}
+
+[sub_resource type="Animation" id="Animation_q22xp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coletavel (Garrafas)/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(82, 229, 198, 153)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qwyg5"]
+_data = {
+&"Coletavel Garrafas (Animação Padrão)": SubResource("Animation_cchbt"),
+&"RESET": SubResource("Animation_q22xp")
+}
+
+[node name="coletavel_garrafas" type="Node2D" unique_id=746245656]
+
+[node name="Coletavel (Garrafas)" type="StaticBody2D" parent="." unique_id=1573723727]
+script = ExtResource("1_cchbt")
+
+[node name="Area2D" type="Area2D" parent="Coletavel (Garrafas)" unique_id=1487853161]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coletavel (Garrafas)/Area2D" unique_id=2068278658]
+position = Vector2(-48.625, 33)
+shape = SubResource("RectangleShape2D_l42ct")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coletavel (Garrafas)" unique_id=1151466658]
+position = Vector2(-48.75, 33)
+shape = SubResource("RectangleShape2D_l42ct")
+
+[node name="Sprite2D" type="Sprite2D" parent="Coletavel (Garrafas)" unique_id=225206154]
+position = Vector2(-44, 36.75)
+scale = Vector2(0.53535354, 0.50653595)
+texture = ExtResource("1_5r6eq")
+region_enabled = true
+region_rect = Rect2(82, 229, 198, 153)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Coletavel (Garrafas)" unique_id=128639634]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_qwyg5")

@@ -79,5 +79,13 @@ func eliminar_inimigo(body: Node2D) -> void:
 		print("Pegou o Coletavel...")
 		ScriptGlobal.qtd_municao += 3
 		
+	if( body.name == 'Coletavel (Garrafas)'):
+		
+		if (ScriptGlobal.qtd_garrafas > 0 || ScriptGlobal.qtd_garrafas < 4):
+			print("Pegou o Coletavel...")
+			ScriptGlobal.qtd_garrafas += 1
+		
+		
+		
 	if ( body.name != "Personagem"):
 		body.queue_free()
