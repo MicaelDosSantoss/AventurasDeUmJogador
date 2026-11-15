@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://csswl6fiki38p"]
+
+[ext_resource type="Script" uid="uid://drltqsppv77hc" path="res://Telas/Tela Principal/tela_principal.gd" id="1_u6y3c"]
+[ext_resource type="Texture2D" uid="uid://cqjnowk2uv38a" path="res://Telas/Tela Principal/Tela_Inicial.jpg" id="2_yx3xg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jeaqj"]
+bg_color = Color(0.26666668, 0.26666668, 0.26666668, 0.5568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdkn7"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhgu2"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_los7g"]
+bg_color = Color(0.26666668, 0.26666668, 0.26666668, 0.5568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pts3v"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgbl8"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddbky"]
+bg_color = Color(0.26666668, 0.26666668, 0.26666668, 0.5568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b60nf"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqduo"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[node name="TelaPrincipal" type="Node2D" unique_id=917294594]
+script = ExtResource("1_u6y3c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1976250247]
+position = Vector2(577, 330)
+scale = Vector2(0.8386628, 0.8528646)
+texture = ExtResource("2_yx3xg")
+
+[node name="Button_Jogar" type="Button" parent="." unique_id=494574406]
+offset_left = 445.0
+offset_top = 318.0
+offset_right = 709.0
+offset_bottom = 408.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jeaqj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mdkn7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nhgu2")
+
+[node name="Button_Opcao" type="Button" parent="." unique_id=679307453]
+offset_left = 445.0
+offset_top = 425.0
+offset_right = 709.0
+offset_bottom = 515.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_los7g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pts3v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vgbl8")
+
+[node name="Button_Sair" type="Button" parent="." unique_id=1472163363]
+offset_left = 446.0
+offset_top = 528.0
+offset_right = 710.0
+offset_bottom = 618.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ddbky")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b60nf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dqduo")
+
+[connection signal="pressed" from="Button_Jogar" to="." method="iniciar_jogo"]
+[connection signal="pressed" from="Button_Sair" to="." method="sair_jogo"]

@@ -12,6 +12,9 @@ func _process(delta: float) -> void:
 	velocity.x = 0
 	velocity.y += gravidade
 	
+	if (ScriptGlobal.qtd_vidas <= 0):
+		get_tree().change_scene_to_file("res://Telas/Game Over/Game_Over.tscn")	
+		
 	if (Input.is_action_pressed("ir_para_esquerda")):
 		velocity.x = -velocidade
 		direcao = -1

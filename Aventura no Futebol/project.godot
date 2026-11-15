@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="As aventura de um jogador"
-run/main_scene="uid://b7tvjc3w8f4rp"
+run/main_scene="uid://csswl6fiki38p"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -41,7 +41,9 @@ folder_colors={
 "res://HUD/": "orange",
 "res://Inimigos/": "purple",
 "res://Scripts/": "yellow",
-"res://Sons/": "teal"
+"res://Sons/": "teal",
+"res://Telas/": "teal",
+"res://Telas/Tela Principal/": "orange"
 }
 
 [input]

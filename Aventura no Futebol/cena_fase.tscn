@@ -85,7 +85,7 @@ position = Vector2(615, -156)
 [node name="Coletavel_Municao" parent="Cenario/Coletaveis" unique_id=230571242 instance=ExtResource("7_4lqq5")]
 
 [node name="coletavel_garrafas" parent="Cenario/Coletaveis" unique_id=746245656 instance=ExtResource("8_b52ro")]
-position = Vector2(-17, -441)
+position = Vector2(31, -461)
 
 [node name="Jogador" parent="." unique_id=174878411 instance=ExtResource("3_v5pcj")]
 position = Vector2(456, 408)
