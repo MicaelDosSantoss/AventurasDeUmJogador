@@ -13,3 +13,6 @@ func _process(delta: float) -> void:
 	if (vida == 1):
 		$AnimationPlayer.play("Vida 1")
 		
+	if (vida == 0):
+		$AnimationPlayer.play("Vida 0")
+		

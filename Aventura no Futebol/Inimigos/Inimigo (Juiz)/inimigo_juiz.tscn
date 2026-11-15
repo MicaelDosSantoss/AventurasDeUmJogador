@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://d0rhxtol5hrgm"]
+
+[ext_resource type="Script" uid="uid://deuwek5cn51au" path="res://Inimigos/Inimigo (Juiz)/inimigo_juiz.gd" id="1_7vvcl"]
+[ext_resource type="Texture2D" uid="uid://c5qsiqy2hh6kh" path="res://Inimigos/Inimigo (Juiz)/Sprint_juiz.png" id="1_ml8oi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
+size = Vector2(34, 128.5)
+
+[sub_resource type="Animation" id="Animation_7vvcl"]
+resource_name = "Inimigo Juiz (Jogando Cartão)"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(52, 580, 283, 536), Rect2(390, 580, 307, 536), Rect2(762, 563, 342, 560), Rect2(31, 1177, 385, 545), Rect2(546, 1179, 384, 548)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"atirar_cartao"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_u3q8f"]
+resource_name = "Inimigo Juiz (Parado)"
+length = 0.7
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(31, 24, 258, 528), Rect2(376, 24, 293, 528), Rect2(716, 23, 293, 529), Rect2(1069, 22, 289, 529)]
+}
+
+[sub_resource type="Animation" id="Animation_g455o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(31, 24, 258, 528)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qoowm"]
+_data = {
+&"Inimigo Juiz (Jogando Cartão)": SubResource("Animation_7vvcl"),
+&"Inimigo Juiz (Parado)": SubResource("Animation_u3q8f"),
+&"RESET": SubResource("Animation_g455o")
+}
+
+[node name="InimigoJuiz" type="Node2D" unique_id=1102260483]
+position = Vector2(-20, -78)
+
+[node name="Character" type="CharacterBody2D" parent="." unique_id=1806323417]
+script = ExtResource("1_7vvcl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Character" unique_id=365926015]
+position = Vector2(36, 94.00001)
+scale = Vector2(0.2512904, 0.2851978)
+texture = ExtResource("1_ml8oi")
+region_enabled = true
+region_rect = Rect2(31, 24, 258, 528)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=795190702]
+position = Vector2(38, 88.25)
+shape = SubResource("RectangleShape2D_l42ct")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Character" unique_id=1376413133]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_qoowm")
+
+[node name="RayCast2D" type="RayCast2D" parent="Character" unique_id=1291169896]
+position = Vector2(-537.00006, 82)
+scale = Vector2(10, 10)
+target_position = Vector2(121.59999, 0.8000002)
+
+[node name="Marker2D" type="Marker2D" parent="Character" unique_id=759666340]
+position = Vector2(182, 63)

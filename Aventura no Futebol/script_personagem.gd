@@ -86,3 +86,6 @@ func eliminar_inimigo(body: Node2D) -> void:
 	
 	if ( body.name != "Personagem" && body.name != "Cenario" ):
 		body.queue_free()
+		
+func receber_dano() -> void:
+	ScriptGlobal.qtd_vidas -= 1

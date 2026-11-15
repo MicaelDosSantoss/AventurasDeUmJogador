@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://5diof0nplroo" path="res://coletavel_municao.tscn" id="7_4lqq5"]
 [ext_resource type="PackedScene" uid="uid://cp2dc6ckovvj2" path="res://coletavel_garrafas.tscn" id="8_b52ro"]
 [ext_resource type="PackedScene" uid="uid://duws67sos7odu" path="res://Inimigos/Inimigo (Atacante)/inimigo_atacante.tscn" id="10_qfbne"]
+[ext_resource type="PackedScene" uid="uid://d0rhxtol5hrgm" path="res://Inimigos/Inimigo (Juiz)/inimigo_juiz.tscn" id="11_k3apr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
 size = Vector2(156.5, 1388.75)
@@ -84,10 +85,13 @@ position = Vector2(615, -156)
 [node name="Coletavel_Municao" parent="Cenario/Coletaveis" unique_id=230571242 instance=ExtResource("7_4lqq5")]
 
 [node name="coletavel_garrafas" parent="Cenario/Coletaveis" unique_id=746245656 instance=ExtResource("8_b52ro")]
-position = Vector2(771, -653)
+position = Vector2(-17, -441)
 
-[node name="Jogador2" parent="." unique_id=174878411 instance=ExtResource("3_v5pcj")]
-position = Vector2(1205, -101)
+[node name="Jogador" parent="." unique_id=174878411 instance=ExtResource("3_v5pcj")]
+position = Vector2(456, 408)
 
 [node name="InimigoAtacante" parent="." unique_id=883794628 instance=ExtResource("10_qfbne")]
 position = Vector2(1031, 172)
+
+[node name="InimigoJuiz" parent="." unique_id=1102260483 instance=ExtResource("11_k3apr")]
+position = Vector2(1968, -287)
