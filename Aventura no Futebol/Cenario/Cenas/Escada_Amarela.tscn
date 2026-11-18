@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ddwmv1fmfdnpf" path="res://Cenario/Sprint_Obstaculos/EscadaAmarela.png" id="1_mh6wh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
-size = Vector2(46, 10)
+size = Vector2(46, 9)
 
 [node name="EscadaAmarela" type="Node2D" unique_id=1427042653]
 
@@ -14,4 +14,5 @@ position = Vector2(-1, 0)
 texture = ExtResource("1_mh6wh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario" unique_id=129094035]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_l42ct")

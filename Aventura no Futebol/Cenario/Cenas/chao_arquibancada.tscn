@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://duivw5fmkkdcr" path="res://Cenario/Sprint_Obstaculos/ChaoAmarelo_platarforma2.png" id="1_tk7sf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
-size = Vector2(611, 22)
+size = Vector2(611, 13)
 
 [node name="ChaoArquibancada" type="Node2D" unique_id=1960767710]
 
@@ -14,5 +14,5 @@ scale = Vector2(2.1599998, 1)
 texture = ExtResource("1_tk7sf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario" unique_id=1971752788]
-position = Vector2(0.5, -5)
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_l42ct")
