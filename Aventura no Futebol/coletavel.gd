@@ -5,8 +5,6 @@ extends StaticBody2D
 func _ready() -> void:
 	$AnimationPlayer.play("Coletavel Munição (Animação Padrão)")
 
-
-
 func pegar_munição(body: Node2D) -> void:
 	if(body.name == "Personagem"):
 		print("Entrou" + body.name)

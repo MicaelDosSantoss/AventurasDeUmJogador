@@ -91,7 +91,7 @@ position = Vector2(31, -461)
 position = Vector2(456, 408)
 
 [node name="InimigoAtacante" parent="." unique_id=883794628 instance=ExtResource("10_qfbne")]
-position = Vector2(1031, 172)
+position = Vector2(1336, 353)
 
 [node name="InimigoJuiz" parent="." unique_id=1102260483 instance=ExtResource("11_k3apr")]
 position = Vector2(1968, -287)

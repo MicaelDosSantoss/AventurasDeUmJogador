@@ -48,3 +48,4 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ts7i7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w2h20")
 
 [connection signal="pressed" from="Button_TentarNovamente" to="." method="reiniciar"]
+[connection signal="pressed" from="Button_Desistir" to="." method="desistir"]

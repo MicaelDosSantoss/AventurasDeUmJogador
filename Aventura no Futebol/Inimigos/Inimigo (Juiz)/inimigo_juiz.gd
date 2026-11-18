@@ -6,22 +6,22 @@ func _process(delta: float) -> void:
 	velocity.y += 20
 	move_and_slide()
 	
-	if $RayCast2D.get_collider() != null && $RayCast2D.get_collider().name == "Personagem":
+	if $RayCast2D.get_collider() !=null && $RayCast2D.get_collider().name == "Personagem":
 		$AnimationPlayer.play("Inimigo Juiz (Jogando Cartão)")
 	else:
 		$AnimationPlayer.play("Inimigo Juiz (Parado)")
 		
-		var personagem = get_tree().root.get_node("Fase/Jogador/Personagem")
-		var personagem_pos_x = personagem.global_position.x
+	var personagem = get_tree().root.get_node("Fase/Jogador/Personagem")
+	var personagem_pos_x = personagem.global_position.x
 	
-		if global_position.x < personagem_pos_x:
-			$Sprite2D.flip_h = false
-			$Marker2D.position.x = abs($Marker2D.position.x)
-			direcao_inimigo = 1
-		else:
-			$Sprite2D.flip_h = true
-			$Marker2D.position.x = -abs($Marker2D.position.x)
-			direcao_inimigo = -1
+	if global_position.x < personagem_pos_x:
+		$Sprite2D.flip_h = false
+		$Marker2D.position.x = abs($Marker2D.position.x)
+		direcao_inimigo = 1
+	else:
+		$Sprite2D.flip_h = true
+		$Marker2D.position.x = -abs($Marker2D.position.x)
+		direcao_inimigo = -1
 		
 func atirar_cartao():
 	var cena_cartao = preload("res://Inimigos/Inimigo (Juiz)/cena_cartao.tscn")

@@ -79,6 +79,8 @@ _data = {
 position = Vector2(-20, -78)
 
 [node name="Character" type="CharacterBody2D" parent="." unique_id=1806323417]
+position = Vector2(1, 0)
+collision_layer = 4
 script = ExtResource("1_7vvcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Character" unique_id=365926015]
@@ -98,8 +100,9 @@ libraries/ = SubResource("AnimationLibrary_qoowm")
 
 [node name="RayCast2D" type="RayCast2D" parent="Character" unique_id=1291169896]
 position = Vector2(-537.00006, 82)
-scale = Vector2(10, 10)
+scale = Vector2(10, 0.64000034)
 target_position = Vector2(121.59999, 0.8000002)
+collision_mask = 2
 
 [node name="Marker2D" type="Marker2D" parent="Character" unique_id=759666340]
-position = Vector2(182, 63)
+position = Vector2(92, 52)

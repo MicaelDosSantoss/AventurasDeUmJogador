@@ -48,6 +48,7 @@ _data = {
 [node name="coletavel_garrafas" type="Node2D" unique_id=746245656]
 
 [node name="Coletavel (Garrafas)" type="StaticBody2D" parent="." unique_id=1573723727]
+collision_layer = 4
 script = ExtResource("1_cchbt")
 
 [node name="Area2D" type="Area2D" parent="Coletavel (Garrafas)" unique_id=1487853161]

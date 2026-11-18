@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://c4fggu5yh7xd5" path="res://Sons/Pulando.mp3" id="3_5y7f4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64uw6"]
-size = Vector2(43, 118.5)
+size = Vector2(43, 126.5)
 
 [sub_resource type="Animation" id="Animation_5y7f4"]
 resource_name = "Curar_Vida"
@@ -170,8 +170,8 @@ size = Vector2(167, 29)
 position = Vector2(563, 329)
 
 [node name="Personagem" type="CharacterBody2D" parent="." unique_id=1443315958]
-light_mask = 2
 position = Vector2(0, -1)
+collision_layer = 2
 script = ExtResource("1_ee3mg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Personagem" unique_id=1837001489]
@@ -181,7 +181,7 @@ region_enabled = true
 region_rect = Rect2(528, 80, 72, 147)
 
 [node name="CollisionShape2" type="CollisionShape2D" parent="Personagem" unique_id=352200697]
-position = Vector2(4.5, -2.25)
+position = Vector2(4.5, 1.75)
 shape = SubResource("RectangleShape2D_64uw6")
 
 [node name="Camera2D" type="Camera2D" parent="Personagem" unique_id=273569552]
@@ -200,9 +200,9 @@ libraries/ = SubResource("AnimationLibrary_ablbj")
 stream = ExtResource("3_5y7f4")
 
 [node name="Area2D" type="Area2D" parent="Personagem" unique_id=448714343]
-light_mask = 2
-visibility_layer = 4
 position = Vector2(0, 1)
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem/Area2D" unique_id=923205762]
 position = Vector2(10, 41)

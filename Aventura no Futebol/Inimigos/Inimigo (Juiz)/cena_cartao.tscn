@@ -29,6 +29,8 @@ disabled = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=136671226]
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=866547470]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1860072966]
 position = Vector2(13.5, 10.5)
