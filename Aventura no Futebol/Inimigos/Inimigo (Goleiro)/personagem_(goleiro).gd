@@ -25,8 +25,7 @@ func _process(delta: float) -> void:
 				velocity.y = -forcao_pulo
 		else:
 			$AnimationPlayer.play("Goleiro (Correndo)")
-	
-	print(personagem.global_position.y)
+
 	if (personagem.global_position.y < 200):
 		velocidade = 0
 		$AnimationPlayer.play("Goleiro (Parado)")

@@ -6,20 +6,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_a57ln"]
 radius = 19.0
 
-[sub_resource type="Animation" id="Animation_54ixj"]
-resource_name = "movendo"
-length = 0.6
-step = 0.2
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_eetmf"]
-_data = {
-&"movendo": SubResource("Animation_54ixj")
-}
+[sub_resource type="CircleShape2D" id="CircleShape2D_l42ct"]
+radius = 19.026299
 
 [node name="Bola" type="Node2D" unique_id=1346768559]
 position = Vector2(567, 333)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1225812022]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_54ixj")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1767896318]
@@ -32,6 +27,12 @@ position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_a57ln")
 disabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=452037294]
-libraries/ = SubResource("AnimationLibrary_eetmf")
-autoplay = &"movendo"
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=2041839161]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=2138002702]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_l42ct")
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="Dano_inimigo"]

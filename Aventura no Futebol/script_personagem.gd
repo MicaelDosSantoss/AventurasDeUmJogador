@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 		
 		if(not animando):
 			velocity.y = -forca_pulo
-			$AudioStreamPlayer_Pulando.play()
 	
 	if (is_on_floor()):
 		if ($AnimationPlayer.current_animation==""):
@@ -50,8 +49,9 @@ func _process(delta: float) -> void:
 			animando = true
 			
 		if (Input.is_action_pressed("curar_vida")):
-			$AnimationPlayer.play("Curar_Vida")
-			animando = true
+			if (ScriptGlobal.qtd_vidas < 3 && ScriptGlobal.qtd_garrafas > 0): 
+				$AnimationPlayer.play("Curar_Vida")
+				animando = true
 			
 	else:
 		$AnimationPlayer.play("pulando")
