@@ -49,6 +49,7 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func Dano_atacante_personagem(body: Node2D) -> void:
+	print("De")
 	if(body.name == "Personagem"):
 		body.receber_dano()
 		await get_tree().create_timer(10.0).timeout

@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://1fppq3q8tfm2"]
+
+[ext_resource type="Script" uid="uid://c14mckx72wqsb" path="res://Inimigos/Inimigo (Goleiro)/personagem_(goleiro).gd" id="1_5nkju"]
+[ext_resource type="Texture2D" uid="uid://345agiwwqhl6" path="res://Inimigos/Inimigo (Goleiro)/Sprint_Goleiro.png" id="2_b4s55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
+size = Vector2(50, 110.5)
+
+[sub_resource type="Animation" id="Animation_evb82"]
+resource_name = "Goleiro (Atacando)"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem (Goleiro)/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(74, 577, 233, 243), Rect2(376, 619, 314, 192)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Personagem (Goleiro)/Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_tgb4f"]
+resource_name = "Goleiro (Correndo)"
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem (Goleiro)/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(31, 312, 161, 188), Rect2(255, 309, 158, 191), Rect2(433, 311, 176, 185), Rect2(686, 302, 165, 185), Rect2(892, 303, 154, 185)]
+}
+
+[sub_resource type="Animation" id="Animation_hv1qd"]
+resource_name = "Goleiro (Parado)"
+length = 0.39999999999999997
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem (Goleiro)/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(77, 80, 143, 199), Rect2(248, 79, 155, 202)]
+}
+
+[sub_resource type="Animation" id="Animation_rqv2u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem (Goleiro)/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(77, 80, 143, 199)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Personagem (Goleiro)/Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1nqvt"]
+_data = {
+&"Goleiro (Atacando)": SubResource("Animation_evb82"),
+&"Goleiro (Correndo)": SubResource("Animation_tgb4f"),
+&"Goleiro (Parado)": SubResource("Animation_hv1qd"),
+&"RESET": SubResource("Animation_rqv2u")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8je1c"]
+size = Vector2(101, 39)
+
+[node name="InimigoGoleiro" type="Node2D" unique_id=1521185127]
+
+[node name="Personagem (Goleiro)" type="CharacterBody2D" parent="." unique_id=355492279]
+collision_layer = 4
+script = ExtResource("1_5nkju")
+
+[node name="Sprite2D" type="Sprite2D" parent="Personagem (Goleiro)" unique_id=394940318]
+position = Vector2(56.211536, 43.394474)
+scale = Vector2(0.6674424, 0.691609)
+texture = ExtResource("2_b4s55")
+region_enabled = true
+region_rect = Rect2(77, 80, 143, 199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem (Goleiro)" unique_id=1156150738]
+position = Vector2(36, 55.75)
+shape = SubResource("RectangleShape2D_l42ct")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem (Goleiro)" unique_id=1463267444]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_1nqvt")
+
+[node name="RayCast2D" type="RayCast2D" parent="Personagem (Goleiro)" unique_id=1508673460]
+position = Vector2(-65, 69)
+scale = Vector2(4.2, 6.76)
+target_position = Vector2(57.14286, 0.14792919)
+collision_mask = 2
+
+[node name="Area2D" type="Area2D" parent="Personagem (Goleiro)" unique_id=1052155991]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem (Goleiro)/Area2D" unique_id=719029726]
+position = Vector2(41.5, -17.5)
+shape = SubResource("RectangleShape2D_8je1c")
+
+[connection signal="body_entered" from="Personagem (Goleiro)/Area2D" to="Personagem (Goleiro)" method="Dano_do_Personagem"]
