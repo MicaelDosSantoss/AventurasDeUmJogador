@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 		
 		if ($RayCast2D.get_collider()!=null):
 			if ($RayCast2D.get_collider().name=="Personagem"):
+				$AudioStreamPlayer_Goleiro_Atacando.play()
 				$AnimationPlayer.play("Goleiro (Atacando)")
 				velocity.y = -forcao_pulo
 		else:

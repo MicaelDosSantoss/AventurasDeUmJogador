@@ -40,8 +40,6 @@ func _process(delta: float) -> void:
 				$AnimationPlayer.play("parado")
 			else:
 				$AnimationPlayer.play("correndo")
-				if (!$AudioStreamPlayer_Correndo.playing):
-					$AudioStreamPlayer_Correndo.play()
 		if (ScriptGlobal.qtd_municao > 0):
 			if (Input.is_action_pressed("chutar")):
 				$AnimationPlayer.play("chutando")
@@ -49,6 +47,7 @@ func _process(delta: float) -> void:
 			
 		if (Input.is_action_pressed("carrinho")):
 			$AnimationPlayer.play("carrinho")
+			$AudioStreamPlayer_Rasteira.play()
 			animando = true
 			
 		if (Input.is_action_pressed("curar_vida")):
@@ -82,7 +81,6 @@ func curar_vida():
 		ScriptGlobal.qtd_vidas += 1
 
 func eliminar_inimigo(body: Node2D) -> void:
-	
 	
 	if( body.name == 'Coletavel (Municao)'):
 		$AudioStreamPlayer_destruir_coletavel.play()

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bore7oteg3ddq"]
 
 [ext_resource type="Script" uid="uid://bg5of3ae48xxk" path="res://Telas/Opcoes/opcoes.gd" id="1_oj8uf"]
-[ext_resource type="Texture2D" uid="uid://q2gkbdhts2bc" path="res://Telas/Opcoes/Opcoes.jpg" id="2_yqj1h"]
+[ext_resource type="Texture2D" uid="uid://ctbis0y84t5qb" path="res://Telas/Opcoes/Opcoes.jpg" id="2_yqj1h"]
 [ext_resource type="AudioStream" uid="uid://d1hxn54rhunu8" path="res://Sons/Musica_Tela_Principal.wav" id="3_yqj1h"]
+[ext_resource type="AudioStream" uid="uid://bo8486h55ih2j" path="res://Sons/Clique.wav" id="4_vxoj1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxoj1"]
 bg_color = Color(0.26666668, 0.26666668, 0.26666668, 0.5568628)
@@ -22,10 +23,10 @@ scale = Vector2(0.8563988, 0.85714287)
 texture = ExtResource("2_yqj1h")
 
 [node name="CheckButton_Musica" type="CheckButton" parent="." unique_id=1191988324]
-offset_left = 620.0
-offset_top = 406.0
-offset_right = 664.0
-offset_bottom = 430.0
+offset_left = 571.0
+offset_top = 453.0
+offset_right = 615.0
+offset_bottom = 477.0
 
 [node name="Button_Opcao" type="Button" parent="." unique_id=1173325503]
 offset_left = 443.0
@@ -41,4 +42,17 @@ stream = ExtResource("3_yqj1h")
 volume_db = -17.0
 autoplay = true
 
+[node name="CheckButton_Keyboard" type="CheckButton" parent="." unique_id=149690752]
+offset_left = 703.0
+offset_top = 391.0
+offset_right = 747.0
+offset_bottom = 415.0
+button_pressed = true
+
+[node name="AudioStreamPlayer_Clique" type="AudioStreamPlayer" parent="." unique_id=1750432971]
+stream = ExtResource("4_vxoj1")
+volume_db = 3.0
+
+[connection signal="pressed" from="CheckButton_Musica" to="." method="silenciar"]
 [connection signal="pressed" from="Button_Opcao" to="." method="voltar"]
+[connection signal="pressed" from="CheckButton_Keyboard" to="." method="Keyboard"]

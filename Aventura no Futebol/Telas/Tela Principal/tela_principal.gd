@@ -11,11 +11,13 @@ func _process(delta: float) -> void:
 	pass
 	
 func iniciar_jogo() -> void:
+	$AudioStreamPlayer_Clique.play()
 	get_tree().change_scene_to_file("res://cena_fase.tscn")
 	
 func sair_jogo() -> void:
+	$AudioStreamPlayer_Clique.play()
 	get_tree().quit()
 
-
 func Opcao() -> void:
+	$AudioStreamPlayer_Clique.play()
 	get_tree().change_scene_to_file("res://Telas/Opcoes/Opcoes.tscn")

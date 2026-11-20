@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://cy0iixbud3gru" path="res://script_personagem.gd" id="1_ee3mg"]
 [ext_resource type="Texture2D" uid="uid://cwirlio2vt75x" path="res://Jogador Claudio.png" id="2_ee3mg"]
 [ext_resource type="AudioStream" uid="uid://b0ndukwm68bx1" path="res://Sons/Pular.wav" id="3_5y7f4"]
-[ext_resource type="AudioStream" uid="uid://c6guuvskb872p" path="res://Sons/Corrida_Grama.wav" id="4_cu5xa"]
 [ext_resource type="AudioStream" uid="uid://bcbc6qw1m3dah" path="res://Sons/Dano_no_personagem.wav" id="5_0crp6"]
 [ext_resource type="AudioStream" uid="uid://74g1n51lbudf" path="res://Sons/bola-de-futebol_editado.wav" id="6_bdqfo"]
 [ext_resource type="AudioStream" uid="uid://6gpnmthcydtb" path="res://Sons/Tomando_Agua.wav" id="7_cu5xa"]
 [ext_resource type="AudioStream" uid="uid://cmuaiaytrsuo1" path="res://Sons/destruir_Coletavel.mp3" id="8_o4m5a"]
+[ext_resource type="AudioStream" uid="uid://liw2wax0v1vd" path="res://Sons/Rasteira.wav" id="8_wjnao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64uw6"]
 size = Vector2(43, 126.5)
@@ -230,7 +230,6 @@ stream = ExtResource("3_5y7f4")
 volume_db = 3.0
 
 [node name="AudioStreamPlayer_Correndo" type="AudioStreamPlayer" parent="Personagem" unique_id=1567340384]
-stream = ExtResource("4_cu5xa")
 volume_db = 3.0
 
 [node name="AudioStreamPlayer_Recebendo_Dano" type="AudioStreamPlayer" parent="Personagem" unique_id=197748165]
@@ -246,5 +245,9 @@ stream = ExtResource("7_cu5xa")
 
 [node name="AudioStreamPlayer_destruir_coletavel" type="AudioStreamPlayer" parent="Personagem" unique_id=1379541122]
 stream = ExtResource("8_o4m5a")
+
+[node name="AudioStreamPlayer_Rasteira" type="AudioStreamPlayer" parent="Personagem" unique_id=893275585]
+stream = ExtResource("8_wjnao")
+volume_db = 2.0
 
 [connection signal="body_entered" from="Personagem/Area2D" to="Personagem" method="eliminar_inimigo"]

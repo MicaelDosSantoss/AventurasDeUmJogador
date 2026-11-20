@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqjnowk2uv38a"
-path="res://.godot/imported/Tela_Inicial.jpg-50fae9d3073f5a1c8555f5265f103bf3.ctex"
+uid="uid://4b2rd6hwq38b"
+path="res://.godot/imported/Pausado.png-2880f9cd026642c0c25d35acbaaca91b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Telas/Tela Principal/Tela_Inicial.jpg"
-dest_files=["res://.godot/imported/Tela_Inicial.jpg-50fae9d3073f5a1c8555f5265f103bf3.ctex"]
+source_file="res://HUD/Sprint/Pausado.png"
+dest_files=["res://.godot/imported/Pausado.png-2880f9cd026642c0c25d35acbaaca91b.ctex"]
 
 [params]
 

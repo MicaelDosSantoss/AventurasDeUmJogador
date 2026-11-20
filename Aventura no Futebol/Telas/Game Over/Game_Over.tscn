@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://6hwix4rq7u7p" path="res://Telas/Game Over/game_over.gd" id="1_j03h3"]
 [ext_resource type="Texture2D" uid="uid://bj5o74h8bw4rl" path="res://Telas/Game Over/Tela_GameOver.png" id="2_4m77x"]
 [ext_resource type="AudioStream" uid="uid://uc0f1jcky180" path="res://Sons/derrota.wav" id="3_4m77x"]
+[ext_resource type="AudioStream" uid="uid://bo8486h55ih2j" path="res://Sons/Clique.wav" id="4_wcy0k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j03h3"]
 bg_color = Color(0.26666668, 0.26666668, 0.26666668, 0.5568628)
@@ -51,6 +52,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_w2h20")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1925013224]
 stream = ExtResource("3_4m77x")
 autoplay = true
+
+[node name="AudioStreamPlayer_Clique" type="AudioStreamPlayer" parent="." unique_id=334012492]
+stream = ExtResource("4_wcy0k")
+volume_db = 3.0
 
 [connection signal="pressed" from="Button_TentarNovamente" to="." method="reiniciar"]
 [connection signal="pressed" from="Button_Desistir" to="." method="desistir"]

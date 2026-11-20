@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vp2uqa26swq" path="res://Inimigos/Inimigo (Atacante)/personagem_(atacante).gd" id="1_ileuh"]
 [ext_resource type="Texture2D" uid="uid://bx8u5m1ri3qav" path="res://Inimigos/Inimigo (Atacante)/sprint_inimigo_3.png" id="2_ileuh"]
+[ext_resource type="AudioStream" uid="uid://liw2wax0v1vd" path="res://Sons/Rasteira.wav" id="3_583t2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
 size = Vector2(40, 144)
@@ -153,6 +154,10 @@ collision_mask = 2
 position = Vector2(2.5, 126)
 shape = SubResource("RectangleShape2D_8je1c")
 disabled = true
+
+[node name="AudioStreamPlayer_Rasteira" type="AudioStreamPlayer" parent="Personagem (Atacante)" unique_id=1314228368]
+stream = ExtResource("3_583t2")
+volume_db = 2.0
 
 [connection signal="animation_finished" from="Personagem (Atacante)/AnimationPlayer" to="Personagem (Atacante)" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Personagem (Atacante)/Area2D" to="Personagem (Atacante)" method="Dano_atacante_personagem"]

@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 		direcao_inimigo = -1
 		
 func atirar_cartao():
+	$AudioStreamPlayer_Som_Cartao.play()
 	var cena_cartao = preload("res://Inimigos/Inimigo (Juiz)/cena_cartao.tscn")
 	var obj_cartao = cena_cartao.instantiate()
 	get_parent().add_child(obj_cartao)

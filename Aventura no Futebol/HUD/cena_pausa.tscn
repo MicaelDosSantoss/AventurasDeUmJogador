@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dtxibkikw58r8"]
+
+[ext_resource type="Script" uid="uid://diocntd4g8o10" path="res://HUD/cena_pausa.gd" id="1_qpsp8"]
+[ext_resource type="Texture2D" uid="uid://4b2rd6hwq38b" path="res://HUD/Sprint/Pausado.png" id="2_xpaaw"]
+
+[node name="CenaPausa" type="Node2D" unique_id=1876080896]
+script = ExtResource("1_qpsp8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1281704467]
+offset_right = 1151.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1605903695]
+position = Vector2(574, 315)
+texture = ExtResource("2_xpaaw")

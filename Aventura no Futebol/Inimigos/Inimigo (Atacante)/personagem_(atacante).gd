@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	if $RayCast2D.get_collider() != null:
 		if ($RayCast2D.get_collider().name=="Personagem"):
 			$AnimationPlayer.play("Inimigo Atacante (Rasteira)")
+			
 	
 	elif velocidade == 0:
 		if $AnimationPlayer.current_animation != "Inimigo Atacante (Parado)":
@@ -49,7 +50,8 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func Dano_atacante_personagem(body: Node2D) -> void:
-	print("De")
+
 	if(body.name == "Personagem"):
+		$AudioStreamPlayer_Rasteira.play()
 		body.receber_dano()
 		await get_tree().create_timer(10.0).timeout

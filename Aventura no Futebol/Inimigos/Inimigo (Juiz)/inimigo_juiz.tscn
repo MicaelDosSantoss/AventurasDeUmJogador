@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://deuwek5cn51au" path="res://Inimigos/Inimigo (Juiz)/inimigo_juiz.gd" id="1_7vvcl"]
 [ext_resource type="Texture2D" uid="uid://c5qsiqy2hh6kh" path="res://Inimigos/Inimigo (Juiz)/Sprint_juiz.png" id="1_ml8oi"]
+[ext_resource type="AudioStream" uid="uid://b0q8ak8nspp0l" path="res://Sons/JogandoCartas.mp3" id="3_u3q8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
 size = Vector2(34, 128.5)
@@ -106,3 +107,7 @@ collision_mask = 2
 
 [node name="Marker2D" type="Marker2D" parent="Character" unique_id=759666340]
 position = Vector2(92, 52)
+
+[node name="AudioStreamPlayer_Som_Cartao" type="AudioStreamPlayer" parent="Character" unique_id=2053288590]
+stream = ExtResource("3_u3q8f")
+volume_db = 3.0

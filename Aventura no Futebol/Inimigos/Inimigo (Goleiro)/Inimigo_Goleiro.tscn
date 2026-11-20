@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c14mckx72wqsb" path="res://Inimigos/Inimigo (Goleiro)/personagem_(goleiro).gd" id="1_5nkju"]
 [ext_resource type="Texture2D" uid="uid://345agiwwqhl6" path="res://Inimigos/Inimigo (Goleiro)/Sprint_Goleiro.png" id="2_b4s55"]
+[ext_resource type="AudioStream" uid="uid://lilbrne5q64n" path="res://Sons/Soco_Goleiro.ogg" id="3_b4s55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
 size = Vector2(50, 110.5)
@@ -55,7 +56,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hv1qd"]
 resource_name = "Goleiro (Parado)"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
@@ -143,5 +144,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem (Goleiro)/Area2D" unique_id=719029726]
 position = Vector2(41.5, -17.5)
 shape = SubResource("RectangleShape2D_8je1c")
+
+[node name="AudioStreamPlayer_Goleiro_Atacando" type="AudioStreamPlayer" parent="Personagem (Goleiro)" unique_id=874309414]
+stream = ExtResource("3_b4s55")
 
 [connection signal="body_entered" from="Personagem (Goleiro)/Area2D" to="Personagem (Goleiro)" method="Dano_do_Personagem"]
