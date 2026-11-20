@@ -1,4 +1,8 @@
-⚽ Aventura de um Jogador — 8-Bit Football Adventure
+<p align="center">
+  <h1>
+<b>⚽ Aventura de um Jogador — 8-Bit Football Adventure</b>
+  </h1>
+</p>
 
 <p align="center">
   <strong>Uma aventura futebolística em pixel art!</strong>
