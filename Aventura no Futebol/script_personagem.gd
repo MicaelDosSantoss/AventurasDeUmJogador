@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed("pular") and is_on_floor()):
 		
 		if(not animando):
+			$AudioStreamPlayer_Pulando.play()
 			velocity.y = -forca_pulo
 	
 	if (is_on_floor()):
@@ -39,6 +40,8 @@ func _process(delta: float) -> void:
 				$AnimationPlayer.play("parado")
 			else:
 				$AnimationPlayer.play("correndo")
+				if (!$AudioStreamPlayer_Correndo.playing):
+					$AudioStreamPlayer_Correndo.play()
 		if (ScriptGlobal.qtd_municao > 0):
 			if (Input.is_action_pressed("chutar")):
 				$AnimationPlayer.play("chutando")
@@ -49,7 +52,8 @@ func _process(delta: float) -> void:
 			animando = true
 			
 		if (Input.is_action_pressed("curar_vida")):
-			if (ScriptGlobal.qtd_vidas < 3 && ScriptGlobal.qtd_garrafas > 0): 
+			if (ScriptGlobal.qtd_vidas < 3 && ScriptGlobal.qtd_garrafas > 0):
+				$AudioStreamPlayer_Tomando_Agua.play()
 				$AnimationPlayer.play("Curar_Vida")
 				animando = true
 			
@@ -59,6 +63,7 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	
 func spawnar_bolar():
+	$AudioStreamPlayer_Bola_de_futebol.play()
 	var cena_bola = preload("res://cena_bola.tscn")
 	var obj_bola  = cena_bola.instantiate()
 	obj_bola.get_node("CharacterBody2D").direcao = direcao
@@ -77,12 +82,15 @@ func curar_vida():
 		ScriptGlobal.qtd_vidas += 1
 
 func eliminar_inimigo(body: Node2D) -> void:
+	
+	
 	if( body.name == 'Coletavel (Municao)'):
+		$AudioStreamPlayer_destruir_coletavel.play()
 		print("Pegou o Coletavel...")
 		ScriptGlobal.qtd_municao += 3
 		
 	if( body.name == 'Coletavel (Garrafas)'):
-		
+		$AudioStreamPlayer_destruir_coletavel.play()
 		if (ScriptGlobal.qtd_garrafas > 0 || ScriptGlobal.qtd_garrafas < 4):
 			print("Pegou o Coletavel...")
 			ScriptGlobal.qtd_garrafas += 1
@@ -91,4 +99,5 @@ func eliminar_inimigo(body: Node2D) -> void:
 		body.queue_free()
 		
 func receber_dano() -> void:
+	$AudioStreamPlayer_Recebendo_Dano.play()
 	ScriptGlobal.qtd_vidas -= 1

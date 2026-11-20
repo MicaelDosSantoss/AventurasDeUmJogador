@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg5of3ae48xxk" path="res://Telas/Opcoes/opcoes.gd" id="1_oj8uf"]
 [ext_resource type="Texture2D" uid="uid://q2gkbdhts2bc" path="res://Telas/Opcoes/Opcoes.jpg" id="2_yqj1h"]
+[ext_resource type="AudioStream" uid="uid://d1hxn54rhunu8" path="res://Sons/Musica_Tela_Principal.wav" id="3_yqj1h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxoj1"]
 bg_color = Color(0.26666668, 0.26666668, 0.26666668, 0.5568628)
@@ -16,23 +17,28 @@ bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
 script = ExtResource("1_oj8uf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=465953905]
-position = Vector2(543, 225.99998)
+position = Vector2(574.99994, 324.99997)
 scale = Vector2(0.8563988, 0.85714287)
 texture = ExtResource("2_yqj1h")
 
 [node name="CheckButton_Musica" type="CheckButton" parent="." unique_id=1191988324]
-offset_left = 625.0
-offset_top = 307.0
-offset_right = 669.0
-offset_bottom = 331.0
+offset_left = 620.0
+offset_top = 406.0
+offset_right = 664.0
+offset_bottom = 430.0
 
 [node name="Button_Opcao" type="Button" parent="." unique_id=1173325503]
-offset_left = 412.0
-offset_top = 410.0
-offset_right = 676.0
-offset_bottom = 490.0
+offset_left = 443.0
+offset_top = 509.0
+offset_right = 707.0
+offset_bottom = 589.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vxoj1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fwknc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gkv6l")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2074952607]
+stream = ExtResource("3_yqj1h")
+volume_db = -17.0
+autoplay = true
 
 [connection signal="pressed" from="Button_Opcao" to="." method="voltar"]

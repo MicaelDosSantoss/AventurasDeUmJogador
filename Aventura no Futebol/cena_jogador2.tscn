@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cy0iixbud3gru" path="res://script_personagem.gd" id="1_ee3mg"]
 [ext_resource type="Texture2D" uid="uid://cwirlio2vt75x" path="res://Jogador Claudio.png" id="2_ee3mg"]
+[ext_resource type="AudioStream" uid="uid://b0ndukwm68bx1" path="res://Sons/Pular.wav" id="3_5y7f4"]
+[ext_resource type="AudioStream" uid="uid://c6guuvskb872p" path="res://Sons/Corrida_Grama.wav" id="4_cu5xa"]
+[ext_resource type="AudioStream" uid="uid://bcbc6qw1m3dah" path="res://Sons/Dano_no_personagem.wav" id="5_0crp6"]
+[ext_resource type="AudioStream" uid="uid://74g1n51lbudf" path="res://Sons/bola-de-futebol_editado.wav" id="6_bdqfo"]
+[ext_resource type="AudioStream" uid="uid://6gpnmthcydtb" path="res://Sons/Tomando_Agua.wav" id="7_cu5xa"]
+[ext_resource type="AudioStream" uid="uid://cmuaiaytrsuo1" path="res://Sons/destruir_Coletavel.mp3" id="8_o4m5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64uw6"]
 size = Vector2(43, 126.5)
@@ -218,5 +224,27 @@ collision_mask = 4
 position = Vector2(10, 41)
 shape = SubResource("RectangleShape2D_5c1av")
 disabled = true
+
+[node name="AudioStreamPlayer_Pulando" type="AudioStreamPlayer" parent="Personagem" unique_id=1361605694]
+stream = ExtResource("3_5y7f4")
+volume_db = 3.0
+
+[node name="AudioStreamPlayer_Correndo" type="AudioStreamPlayer" parent="Personagem" unique_id=1567340384]
+stream = ExtResource("4_cu5xa")
+volume_db = 3.0
+
+[node name="AudioStreamPlayer_Recebendo_Dano" type="AudioStreamPlayer" parent="Personagem" unique_id=197748165]
+stream = ExtResource("5_0crp6")
+volume_db = 3.0
+
+[node name="AudioStreamPlayer_Bola_de_futebol" type="AudioStreamPlayer" parent="Personagem" unique_id=108560971]
+stream = ExtResource("6_bdqfo")
+volume_db = 3.0
+
+[node name="AudioStreamPlayer_Tomando_Agua" type="AudioStreamPlayer" parent="Personagem" unique_id=565088621]
+stream = ExtResource("7_cu5xa")
+
+[node name="AudioStreamPlayer_destruir_coletavel" type="AudioStreamPlayer" parent="Personagem" unique_id=1379541122]
+stream = ExtResource("8_o4m5a")
 
 [connection signal="body_entered" from="Personagem/Area2D" to="Personagem" method="eliminar_inimigo"]

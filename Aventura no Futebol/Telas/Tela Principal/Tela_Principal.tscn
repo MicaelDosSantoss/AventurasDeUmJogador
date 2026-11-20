@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drltqsppv77hc" path="res://Telas/Tela Principal/tela_principal.gd" id="1_u6y3c"]
 [ext_resource type="Texture2D" uid="uid://cqjnowk2uv38a" path="res://Telas/Tela Principal/Tela_Inicial.jpg" id="2_yx3xg"]
+[ext_resource type="AudioStream" uid="uid://d1hxn54rhunu8" path="res://Sons/Musica_Tela_Principal.wav" id="3_yx3xg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jeaqj"]
 bg_color = Color(0.26666668, 0.26666668, 0.26666668, 0.5568628)
@@ -64,6 +65,11 @@ offset_bottom = 618.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ddbky")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b60nf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dqduo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1542115918]
+stream = ExtResource("3_yx3xg")
+volume_db = -17.119
+autoplay = true
 
 [connection signal="pressed" from="Button_Jogar" to="." method="iniciar_jogo"]
 [connection signal="pressed" from="Button_Opcao" to="." method="Opcao"]

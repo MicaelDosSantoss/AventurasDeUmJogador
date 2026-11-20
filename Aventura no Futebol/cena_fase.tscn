@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://duws67sos7odu" path="res://Inimigos/Inimigo (Atacante)/inimigo_atacante.tscn" id="10_qfbne"]
 [ext_resource type="PackedScene" uid="uid://d0rhxtol5hrgm" path="res://Inimigos/Inimigo (Juiz)/inimigo_juiz.tscn" id="11_k3apr"]
 [ext_resource type="PackedScene" uid="uid://1fppq3q8tfm2" path="res://Inimigos/Inimigo (Goleiro)/Inimigo_Goleiro.tscn" id="12_a81b3"]
+[ext_resource type="AudioStream" uid="uid://b0i3fy00ws62p" path="res://Sons/Cenario_principal.wav" id="13_mi15o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
 size = Vector2(156.5, 1388.75)
@@ -99,3 +100,8 @@ position = Vector2(1968, -287)
 
 [node name="InimigoGoleiro" parent="." unique_id=1521185127 instance=ExtResource("12_a81b3")]
 position = Vector2(1566, 285)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=441779716]
+stream = ExtResource("13_mi15o")
+volume_db = 3.0
+autoplay = true
