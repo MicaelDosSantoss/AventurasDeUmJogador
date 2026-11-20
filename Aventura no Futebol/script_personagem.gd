@@ -13,6 +13,8 @@ func _ready() -> void:
 		$Camera2D.limit_top = -250
 		$Camera2D.limit_left = 30
 		$Camera2D.limit_right = 1680
+		ScriptGlobal.qtd_municao += 10
+		
 
 
 func _process(delta: float) -> void:
@@ -72,7 +74,7 @@ func spawnar_bolar():
 	$AudioStreamPlayer_Bola_de_futebol.play()
 	var cena_bola = preload("res://cena_bola.tscn")
 	var obj_bola  = cena_bola.instantiate()
-	obj_bola.get_node("CharacterBody2D").direcao = direcao
+	obj_bola.get_node("Bola_Futebol").direcao = direcao
 	get_parent().add_child(obj_bola)
 		
 	var pos_x = abs($Marker2D.position.x)
@@ -86,6 +88,7 @@ func curar_vida():
 	if  ScriptGlobal.qtd_vidas < 3 && ScriptGlobal.qtd_garrafas > 0:
 		ScriptGlobal.qtd_garrafas -= 1
 		ScriptGlobal.qtd_vidas += 1
+		
 
 func eliminar_inimigo(body: Node2D) -> void:
 	print(body.name)
@@ -105,7 +108,7 @@ func eliminar_inimigo(body: Node2D) -> void:
 		var boss = get_tree().current_scene.find_child("CharacterBody2D", true, false)
 		
 		if boss != null:
-			boss.receber_dano(50)
+			boss.receber_dano(30)
 	
 	if ( body.name != "Personagem" && body.name != "Cenario" && body.name != "CharacterBody2D" ):
 		body.queue_free()

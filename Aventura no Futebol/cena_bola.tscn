@@ -12,27 +12,27 @@ radius = 19.026299
 [node name="Bola" type="Node2D" unique_id=1346768559]
 position = Vector2(567, 333)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1225812022]
+[node name="Bola_Futebol" type="CharacterBody2D" parent="." unique_id=1225812022]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_54ixj")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1767896318]
+[node name="Sprite2D" type="Sprite2D" parent="Bola_Futebol" unique_id=1767896318]
 position = Vector2(0.50001115, 1.5000088)
 scale = Vector2(0.034290284, 0.034290265)
 texture = ExtResource("1_a57ln")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=554890837]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bola_Futebol" unique_id=554890837]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_a57ln")
 disabled = true
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=2041839161]
+[node name="Area2D" type="Area2D" parent="Bola_Futebol" unique_id=2041839161]
 collision_layer = 2
 collision_mask = 4
 
-[node name="Collision" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=2138002702]
+[node name="Collision" type="CollisionShape2D" parent="Bola_Futebol/Area2D" unique_id=2138002702]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_l42ct")
 
-[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="Dano_inimigo"]
+[connection signal="body_entered" from="Bola_Futebol/Area2D" to="Bola_Futebol" method="Dano_inimigo"]

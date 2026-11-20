@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var direcao    = 1 #  1 => Direita, -1 => Esquerda
-var velocidade = 350
+var velocidade = 500
 
 func _process(delta: float) -> void:
 	velocity.x = velocidade * direcao
@@ -9,6 +9,12 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	
 func Dano_inimigo(body: Node2D) -> void:
+	
+	if (body.name == "CharacterBody2D"):
+		var boss = get_tree().current_scene.find_child("CharacterBody2D", true, false)
+		
+		if boss != null:
+			boss.receber_dano(20)
 	
 	if( body.name == 'Coletavel (Municao)'):
 		print("Pegou o Coletavel...")
@@ -20,6 +26,6 @@ func Dano_inimigo(body: Node2D) -> void:
 			print("Pegou o Coletavel...")
 			ScriptGlobal.qtd_garrafas += 1
 			
-	if ( body.name != "Personagem" && body.name != "Cenario" && body.name != "Cenario"):
+	if (body.name != "Personagem" && body.name != "Cenario" && body.name != "CharacterBody2D"):
 			body.queue_free()
 			get_parent().queue_free()
