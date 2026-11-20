@@ -15,3 +15,7 @@ func iniciar_jogo() -> void:
 	
 func sair_jogo() -> void:
 	get_tree().quit()
+
+
+func Opcao() -> void:
+	get_tree().change_scene_to_file("res://Telas/Opcoes/Opcoes.tscn")

@@ -66,4 +66,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b60nf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dqduo")
 
 [connection signal="pressed" from="Button_Jogar" to="." method="iniciar_jogo"]
+[connection signal="pressed" from="Button_Opcao" to="." method="Opcao"]
 [connection signal="pressed" from="Button_Sair" to="." method="sair_jogo"]
