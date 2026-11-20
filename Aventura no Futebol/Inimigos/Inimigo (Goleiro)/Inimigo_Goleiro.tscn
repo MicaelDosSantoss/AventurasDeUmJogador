@@ -148,4 +148,10 @@ shape = SubResource("RectangleShape2D_8je1c")
 [node name="AudioStreamPlayer_Goleiro_Atacando" type="AudioStreamPlayer" parent="Personagem (Goleiro)" unique_id=874309414]
 stream = ExtResource("3_b4s55")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Personagem (Goleiro)" unique_id=429380485]
+position = Vector2(135, 44)
+rect = Rect2(-10, -10, 20, 78)
+
 [connection signal="body_entered" from="Personagem (Goleiro)/Area2D" to="Personagem (Goleiro)" method="Dano_do_Personagem"]
+[connection signal="screen_entered" from="Personagem (Goleiro)/VisibleOnScreenNotifier2D" to="Personagem (Goleiro)" method="perseguir"]
+[connection signal="screen_exited" from="Personagem (Goleiro)/VisibleOnScreenNotifier2D" to="Personagem (Goleiro)" method="parar_perseguir"]

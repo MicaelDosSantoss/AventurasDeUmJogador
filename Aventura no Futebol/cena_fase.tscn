@@ -107,16 +107,48 @@ scale = Vector2(0.9199951, 1)
 position = Vector2(1957.9998, -541.00006)
 scale = Vector2(0.9199951, 1)
 
+[node name="ChaoArquibancada4" parent="Cenario" unique_id=382119807 instance=ExtResource("3_j1lpk")]
+position = Vector2(1957.9998, -541.00006)
+scale = Vector2(0.9199951, 1)
+
+[node name="ChaoArquibancada5" parent="Cenario" unique_id=836061073 instance=ExtResource("3_j1lpk")]
+position = Vector2(3187, -533)
+scale = Vector2(0.9199951, 1)
+
+[node name="ChaoArquibancada6" parent="Cenario" unique_id=1842336749 instance=ExtResource("3_j1lpk")]
+position = Vector2(3187, -533)
+scale = Vector2(0.9199951, 1)
+
+[node name="ChaoArquibancada7" parent="Cenario" unique_id=637341728 instance=ExtResource("3_j1lpk")]
+position = Vector2(3908.0002, -732)
+scale = Vector2(0.9199951, 1)
+
+[node name="ChaoArquibancada8" parent="Cenario" unique_id=181770345 instance=ExtResource("3_j1lpk")]
+position = Vector2(4966, -724)
+scale = Vector2(0.9199951, 1)
+
+[node name="ChaoArquibancada9" parent="Cenario" unique_id=1886489903 instance=ExtResource("3_j1lpk")]
+position = Vector2(4430, -535.00006)
+scale = Vector2(0.9199951, 1)
+
 [node name="ChaoArquibancada2" parent="Cenario" unique_id=1699885057 instance=ExtResource("3_j1lpk")]
 position = Vector2(1314.0001, -730)
 scale = Vector2(0.9199951, 1)
 
 [node name="EscadaAmarela" parent="Cenario" unique_id=1427042653 instance=ExtResource("3_2r50s")]
-position = Vector2(388.99994, -362.00003)
+position = Vector2(355.99994, -358)
 scale = Vector2(1.8254468, 2.0272195)
 
 [node name="EscadaAmarela2" parent="Cenario" unique_id=1401006881 instance=ExtResource("3_2r50s")]
-position = Vector2(1661, -359.00003)
+position = Vector2(1627, -359)
+scale = Vector2(1.8254468, 2.0272195)
+
+[node name="EscadaAmarela3" parent="Cenario" unique_id=120030524 instance=ExtResource("3_2r50s")]
+position = Vector2(2875, -354.00003)
+scale = Vector2(1.8254468, 2.0272195)
+
+[node name="EscadaAmarela4" parent="Cenario" unique_id=942221677 instance=ExtResource("3_2r50s")]
+position = Vector2(4144, -360.00003)
 scale = Vector2(1.8254468, 2.0272195)
 
 [node name="Coletaveis" type="StaticBody2D" parent="Cenario" unique_id=208766805]
@@ -124,23 +156,74 @@ position = Vector2(615, -156)
 
 [node name="Coletavel_Municao" parent="Cenario/Coletaveis" unique_id=230571242 instance=ExtResource("7_4lqq5")]
 
+[node name="Coletavel_Municao2" parent="Cenario/Coletaveis" unique_id=1449263459 instance=ExtResource("7_4lqq5")]
+position = Vector2(1355, -427)
+
 [node name="coletavel_garrafas" parent="Cenario/Coletaveis" unique_id=746245656 instance=ExtResource("8_b52ro")]
 position = Vector2(31, -461)
 
 [node name="coletavel_garrafas2" parent="Cenario/Coletaveis" unique_id=270549848 instance=ExtResource("8_b52ro")]
 position = Vector2(1273, -464)
 
+[node name="coletavel_garrafas3" parent="Cenario/Coletaveis" unique_id=337876991 instance=ExtResource("8_b52ro")]
+position = Vector2(3800, -457)
+
+[node name="coletavel_garrafas4" parent="Cenario/Coletaveis" unique_id=919850217 instance=ExtResource("8_b52ro")]
+position = Vector2(3894, -457)
+
+[node name="coletavel_garrafas6" parent="Cenario/Coletaveis" unique_id=1514965799 instance=ExtResource("8_b52ro")]
+position = Vector2(4368, -45)
+
+[node name="coletavel_garrafas5" parent="Cenario/Coletaveis" unique_id=992645521 instance=ExtResource("8_b52ro")]
+position = Vector2(3991, -457)
+
+[node name="Coletavel_Municao3" parent="Cenario/Coletaveis" unique_id=875210396 instance=ExtResource("7_4lqq5")]
+position = Vector2(2563, -420)
+
+[node name="Coletavel_Municao5" parent="Cenario/Coletaveis" unique_id=1214478631 instance=ExtResource("7_4lqq5")]
+position = Vector2(2374, 4)
+
+[node name="Coletavel_Municao4" parent="Cenario/Coletaveis" unique_id=1345481921 instance=ExtResource("7_4lqq5")]
+position = Vector2(4409, -607)
+
 [node name="Jogador" parent="." unique_id=174878411 instance=ExtResource("3_v5pcj")]
-position = Vector2(6245, 408)
+position = Vector2(185, 408)
 
 [node name="InimigoAtacante" parent="." unique_id=883794628 instance=ExtResource("10_qfbne")]
 position = Vector2(1336, 353)
 
+[node name="InimigoAtacante2" parent="." unique_id=1845827170 instance=ExtResource("10_qfbne")]
+position = Vector2(2882, 323)
+
+[node name="InimigoAtacante3" parent="." unique_id=1459646748 instance=ExtResource("10_qfbne")]
+position = Vector2(4057, 338)
+
+[node name="InimigoAtacante4" parent="." unique_id=2020581465 instance=ExtResource("10_qfbne")]
+position = Vector2(4887, 340)
+
+[node name="InimigoAtacante5" parent="." unique_id=1212619857 instance=ExtResource("10_qfbne")]
+position = Vector2(5997, 329)
+
 [node name="InimigoJuiz" parent="." unique_id=1102260483 instance=ExtResource("11_k3apr")]
 position = Vector2(1968, -287)
 
+[node name="InimigoJuiz3" parent="." unique_id=847858261 instance=ExtResource("11_k3apr")]
+position = Vector2(3976, -89)
+
+[node name="InimigoJuiz4" parent="." unique_id=1291408663 instance=ExtResource("11_k3apr")]
+position = Vector2(4245, -292)
+
+[node name="InimigoJuiz5" parent="." unique_id=178264469 instance=ExtResource("11_k3apr")]
+position = Vector2(5756, -285)
+
+[node name="InimigoJuiz2" parent="." unique_id=147716257 instance=ExtResource("11_k3apr")]
+position = Vector2(2725, -107)
+
 [node name="InimigoGoleiro" parent="." unique_id=1521185127 instance=ExtResource("12_a81b3")]
 position = Vector2(1566, 285)
+
+[node name="InimigoGoleiro2" parent="." unique_id=1218885831 instance=ExtResource("12_a81b3")]
+position = Vector2(6853, 254)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=441779716]
 stream = ExtResource("13_mi15o")

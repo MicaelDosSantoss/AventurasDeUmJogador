@@ -27,6 +27,7 @@ func _on_area_2d_body_entered(body):
 			
 		if body.has_method("receber_dano"):
 			body.receber_dano()
+			body.receber_dano()
 			
 		await get_tree().create_timer(0.08).timeout
 		queue_free()

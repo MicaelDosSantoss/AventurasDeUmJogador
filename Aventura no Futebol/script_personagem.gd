@@ -15,14 +15,21 @@ func _ready() -> void:
 		$Camera2D.limit_right = 1680
 		ScriptGlobal.qtd_municao += 10
 		
+		ScriptGlobal.qtd_vidas = 0
+		ScriptGlobal.qtd_vidas += 3
+		
+		ScriptGlobal.qtd_garrafas = 0
+		ScriptGlobal.qtd_garrafas += 3
+		
+		ScriptGlobal.checkpoint = "res://Telas/Game Over2/Game_Over2.tscn"
 
 
 func _process(delta: float) -> void:
 	velocity.x = 0
 	velocity.y += gravidade
 	
-	if (ScriptGlobal.qtd_vidas <= 0):
-		get_tree().change_scene_to_file("res://Telas/Game Over/Game_Over.tscn")	
+	if (ScriptGlobal.qtd_vidas <= 0):	
+		get_tree().change_scene_to_file(ScriptGlobal.checkpoint)	
 		
 	if (Input.is_action_pressed("ir_para_esquerda")):
 		velocity.x = -velocidade
@@ -108,7 +115,7 @@ func eliminar_inimigo(body: Node2D) -> void:
 		var boss = get_tree().current_scene.find_child("CharacterBody2D", true, false)
 		
 		if boss != null:
-			boss.receber_dano(30)
+			boss.receber_dano(25)
 	
 	if ( body.name != "Personagem" && body.name != "Cenario" && body.name != "CharacterBody2D" ):
 		body.queue_free()

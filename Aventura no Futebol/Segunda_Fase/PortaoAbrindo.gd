@@ -10,8 +10,9 @@ func _process(delta: float) -> void:
 	
 	if ScriptGlobal.portao != false:
 		ScriptGlobal.portao = false
+		$AudioStreamPlayer.play()
 		$AnimationPlayer.play("Portão Abrindo")
-
+		$AudioStreamPlayer.stop()
 
 func vitoria_do_jogador(body: Node2D) -> void:
 	if(body.name == "Personagem"):

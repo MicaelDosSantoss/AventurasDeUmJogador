@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://3fjt2yje5mjn"]
+
+[ext_resource type="Script" uid="uid://brimo05rve1c0" path="res://Telas/Game Over2/game_over_2.gd" id="1_4f7i7"]
+[ext_resource type="Texture2D" uid="uid://bhnkrmut4vsp3" path="res://Telas/Game Over2/Game_Over2.jpg" id="2_l62u0"]
+[ext_resource type="AudioStream" uid="uid://uc0f1jcky180" path="res://Sons/derrota.wav" id="3_2mbks"]
+[ext_resource type="AudioStream" uid="uid://bo8486h55ih2j" path="res://Sons/Clique.wav" id="4_j1wns"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ft0ch"]
+bg_color = Color(0.26666668, 0.26666668, 0.26666668, 0.5568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptnso"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wb0h"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_segjq"]
+bg_color = Color(0.26666668, 0.26666668, 0.26666668, 0.5568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_726io"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c3xd"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[node name="GameOver2" type="Node2D" unique_id=2085804741]
+script = ExtResource("1_4f7i7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1856069984]
+position = Vector2(575.5612, 320.975)
+scale = Vector2(0.8563077, 0.8598546)
+texture = ExtResource("2_l62u0")
+
+[node name="Button_TentarNovamente" type="Button" parent="." unique_id=101870517]
+offset_left = 375.0
+offset_top = 440.0
+offset_right = 777.0
+offset_bottom = 516.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ft0ch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ptnso")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wb0h")
+
+[node name="Button_Desistir" type="Button" parent="." unique_id=872119386]
+offset_left = 450.0
+offset_top = 524.0
+offset_right = 702.0
+offset_bottom = 601.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_segjq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_726io")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3xd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=14057362]
+stream = ExtResource("3_2mbks")
+autoplay = true
+
+[node name="AudioStreamPlayer_Clique" type="AudioStreamPlayer" parent="." unique_id=1138377751]
+stream = ExtResource("4_j1wns")
+volume_db = 3.0
+
+[connection signal="pressed" from="Button_TentarNovamente" to="." method="reiniciar"]
+[connection signal="pressed" from="Button_Desistir" to="." method="desistir"]

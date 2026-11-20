@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cfbocgsribblh" path="res://Segunda_Fase/Sprint/Portao_Abrindo.png" id="1_kcbg7"]
 [ext_resource type="Script" uid="uid://bj1foo8xt8d48" path="res://Segunda_Fase/PortaoAbrindo.gd" id="1_n1lpf"]
+[ext_resource type="AudioStream" uid="uid://b83mge2lmd68d" path="res://Sons/Portao.wav" id="3_ot06x"]
 
 [sub_resource type="Animation" id="Animation_n1lpf"]
 resource_name = "Portão Abrindo"
@@ -126,5 +127,9 @@ shape = SubResource("RectangleShape2D_5c1av")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=228695768]
 position = Vector2(175.5, -9)
 shape = SubResource("RectangleShape2D_n1lpf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StaticBody2D" unique_id=532550767]
+stream = ExtResource("3_ot06x")
+volume_db = 3.0
 
 [connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D" method="vitoria_do_jogador"]

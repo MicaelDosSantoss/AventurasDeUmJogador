@@ -8,6 +8,7 @@ var qtd_municao = 0
 var musica_ligada = true
 var keyboard_visible = true
 var portao = false
+var checkpoint = "res://Telas/Game Over/Game_Over.tscn"
 
 func resetar_variaveis():
 	qtd_vidas = 3
@@ -17,6 +18,7 @@ func resetar_variaveis():
 	qtd_municao = 3
 	var musica_ligada = true
 	portao = false
+	checkpoint = "res://Telas/Game Over/Game_Over.tscn"
 	
 func _ready() -> void:
 	resetar_variaveis()

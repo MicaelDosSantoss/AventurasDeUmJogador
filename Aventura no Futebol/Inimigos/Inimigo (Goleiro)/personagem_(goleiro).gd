@@ -26,12 +26,9 @@ func _process(delta: float) -> void:
 				velocity.y = -forcao_pulo
 		else:
 			$AnimationPlayer.play("Goleiro (Correndo)")
-
-	if (personagem.global_position.y < 200):
-		velocidade = 0
-		$AnimationPlayer.play("Goleiro (Parado)")
-	else:
-		velocidade = 300
+	
+	var visibleOnScreenPosX = $VisibleOnScreenNotifier2D.position.x
+	$VisibleOnScreenNotifier2D.position.x = abs(visibleOnScreenPosX) * direcao_inimigo3
 		
 	velocity.x  = velocidade * direcao_inimigo3
 
@@ -41,3 +38,12 @@ func _process(delta: float) -> void:
 func Dano_do_Personagem(body: Node2D) -> void:
 	if(body.name == "Personagem"):
 		body.receber_dano()
+
+
+func perseguir() -> void:
+	velocidade = 300
+
+
+func parar_perseguir() -> void:
+	velocidade = 0
+	$AnimationPlayer.play("Goleiro (Parado)")

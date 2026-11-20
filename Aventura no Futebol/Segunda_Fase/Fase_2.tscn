@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bpv0qpgd786gv"]
 
+[ext_resource type="Script" uid="uid://bh6nndm6vl47e" path="res://Segunda_Fase/fase_2.gd" id="1_0bpmn"]
 [ext_resource type="Texture2D" uid="uid://raiplh6flng" path="res://Segunda_Fase/Fase_2.png" id="1_as7kd"]
 [ext_resource type="PackedScene" uid="uid://eweaevx55v0k" path="res://Segunda_Fase/portao_abrindo.tscn" id="1_ida82"]
 [ext_resource type="PackedScene" uid="uid://w1q8ofvc4opa" path="res://cena_jogador2.tscn" id="2_70grl"]
 [ext_resource type="PackedScene" uid="uid://dimdvq6x3u6kx" path="res://HUD/cena_hud.tscn" id="4_jtook"]
 [ext_resource type="PackedScene" uid="uid://deekbu833rprd" path="res://Inimigos/Boss A e V/cena_bossA.tscn" id="5_xuw3k"]
+[ext_resource type="AudioStream" uid="uid://bfpxsqta6cfd5" path="res://Sons/Boss_Som.wav" id="7_uwsm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70grl"]
 size = Vector2(1688.5, 104.5)
@@ -37,6 +39,7 @@ size = Vector2(182.125, 37.0625)
 size = Vector2(258, 48.5)
 
 [node name="Fase2" type="Node2D" unique_id=97714528]
+script = ExtResource("1_0bpmn")
 
 [node name="Cenario" type="StaticBody2D" parent="." unique_id=229873913]
 
@@ -97,3 +100,7 @@ position = Vector2(267, 410)
 
 [node name="Boss Amarelo" parent="." unique_id=535231265 instance=ExtResource("5_xuw3k")]
 position = Vector2(306, 39)
+
+[node name="AudioStreamPlayer_Boss" type="AudioStreamPlayer" parent="." unique_id=342440415]
+stream = ExtResource("7_uwsm8")
+volume_db = 3.0
