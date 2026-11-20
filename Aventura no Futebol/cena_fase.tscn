@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bnj0376x3ef1h" path="res://Cenario/Cenas/Escada_Amarela.tscn" id="3_2r50s"]
 [ext_resource type="PackedScene" uid="uid://l4g8eyoa7oe4" path="res://Cenario/Cenas/chao_arquibancada.tscn" id="3_j1lpk"]
 [ext_resource type="PackedScene" uid="uid://w1q8ofvc4opa" path="res://cena_jogador2.tscn" id="3_v5pcj"]
+[ext_resource type="Texture2D" uid="uid://dojrb3i4nb5fa" path="res://Cenario/Arquibancada_com_o_túnel.png" id="5_ijxin"]
 [ext_resource type="PackedScene" uid="uid://fmqjgt5hiwro" path="res://nuvem.tscn" id="6_08fst"]
 [ext_resource type="PackedScene" uid="uid://5diof0nplroo" path="res://coletavel_municao.tscn" id="7_4lqq5"]
 [ext_resource type="PackedScene" uid="uid://cp2dc6ckovvj2" path="res://coletavel_garrafas.tscn" id="8_b52ro"]
@@ -18,7 +19,10 @@
 size = Vector2(156.5, 1388.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r67k"]
-size = Vector2(4166.625, 44.5)
+size = Vector2(7535.3125, 39.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c1av"]
+size = Vector2(354, 299)
 
 [node name="Fase" type="Node2D" unique_id=934340607]
 position = Vector2(0, 6)
@@ -36,10 +40,14 @@ position = Vector2(583, 608)
 position = Vector2(-472, -717.625)
 shape = SubResource("RectangleShape2D_l42ct")
 
+[node name="Parede_Invicivel (Atrás)2" type="CollisionShape2D" parent="Cenario" unique_id=713915137]
+position = Vector2(6498, -823)
+shape = SubResource("RectangleShape2D_l42ct")
+
 [node name="Chão" type="StaticBody2D" parent="Cenario" unique_id=2096005540]
 
 [node name="Colision" type="CollisionShape2D" parent="Cenario/Chão" unique_id=946560048]
-position = Vector2(1531, -98.75)
+position = Vector2(3215.3438, -96.25)
 shape = SubResource("RectangleShape2D_3r67k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cenario/Chão" unique_id=625240459]
@@ -57,20 +65,46 @@ position = Vector2(3385, -65)
 scale = Vector2(1.1606104, 2.0932205)
 texture = ExtResource("1_5fdea")
 
+[node name="Sprite2D4" type="Sprite2D" parent="Cenario/Chão" unique_id=1154644993]
+position = Vector2(4979, -65)
+scale = Vector2(1.1606104, 2.0932205)
+texture = ExtResource("1_5fdea")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Cenario/Chão" unique_id=50114266]
+position = Vector2(6565, -65)
+scale = Vector2(1.1606104, 2.0932205)
+texture = ExtResource("1_5fdea")
+
 [node name="Sprite2D" type="Sprite2D" parent="Cenario" unique_id=168321105]
-position = Vector2(715.9999, -581)
+position = Vector2(676.9999, -578)
 rotation = -3.1415925
 scale = Vector2(1.8316501, -1.6441041)
 texture = ExtResource("2_v5pcj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Cenario" unique_id=1053373040]
-position = Vector2(3201, -581)
+position = Vector2(3197, -578)
 rotation = -3.1415925
 scale = Vector2(1.8316501, -1.6441041)
 texture = ExtResource("2_v5pcj")
 
+[node name="Arquibancada_com_tunel" type="Sprite2D" parent="Cenario" unique_id=1655405628]
+position = Vector2(5442.5, -578)
+scale = Vector2(1.4888393, 1.6679105)
+texture = ExtResource("5_ijxin")
+
+[node name="Area2D" type="Area2D" parent="Cenario" unique_id=28105075]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/Area2D" unique_id=2027682834]
+position = Vector2(5949, -283.5)
+shape = SubResource("RectangleShape2D_5c1av")
+
 [node name="ChaoArquibancada" parent="Cenario" unique_id=1960767710 instance=ExtResource("3_j1lpk")]
 position = Vector2(716, -538)
+scale = Vector2(0.9199951, 1)
+
+[node name="ChaoArquibancada3" parent="Cenario" unique_id=116882755 instance=ExtResource("3_j1lpk")]
+position = Vector2(1957.9998, -541.00006)
 scale = Vector2(0.9199951, 1)
 
 [node name="ChaoArquibancada2" parent="Cenario" unique_id=1699885057 instance=ExtResource("3_j1lpk")]
@@ -81,6 +115,10 @@ scale = Vector2(0.9199951, 1)
 position = Vector2(388.99994, -362.00003)
 scale = Vector2(1.8254468, 2.0272195)
 
+[node name="EscadaAmarela2" parent="Cenario" unique_id=1401006881 instance=ExtResource("3_2r50s")]
+position = Vector2(1661, -359.00003)
+scale = Vector2(1.8254468, 2.0272195)
+
 [node name="Coletaveis" type="StaticBody2D" parent="Cenario" unique_id=208766805]
 position = Vector2(615, -156)
 
@@ -89,8 +127,11 @@ position = Vector2(615, -156)
 [node name="coletavel_garrafas" parent="Cenario/Coletaveis" unique_id=746245656 instance=ExtResource("8_b52ro")]
 position = Vector2(31, -461)
 
+[node name="coletavel_garrafas2" parent="Cenario/Coletaveis" unique_id=270549848 instance=ExtResource("8_b52ro")]
+position = Vector2(1273, -464)
+
 [node name="Jogador" parent="." unique_id=174878411 instance=ExtResource("3_v5pcj")]
-position = Vector2(456, 408)
+position = Vector2(6245, 408)
 
 [node name="InimigoAtacante" parent="." unique_id=883794628 instance=ExtResource("10_qfbne")]
 position = Vector2(1336, 353)
@@ -105,3 +146,5 @@ position = Vector2(1566, 285)
 stream = ExtResource("13_mi15o")
 volume_db = 3.0
 autoplay = true
+
+[connection signal="body_entered" from="Cenario/Area2D" to="Nuvem" method="passar_de_fase"]

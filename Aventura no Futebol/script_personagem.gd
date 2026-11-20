@@ -8,6 +8,12 @@ var animando    = false
 
 @onready var area_ataque: Area2D = $Area2D
 
+func _ready() -> void:
+	if get_tree().current_scene.name == "Fase2":
+		$Camera2D.limit_top = -250
+		$Camera2D.limit_left = 30
+		$Camera2D.limit_right = 1680
+
 func _process(delta: float) -> void:
 	velocity.x = 0
 	velocity.y += gravidade

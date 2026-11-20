@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://yjuyln5nrc4y"]
+
+[ext_resource type="Script" uid="uid://c55s6pk0kqnsd" path="res://Telas/Vitoria/vitoria.gd" id="1_3l3oi"]
+[ext_resource type="Texture2D" uid="uid://ll23x7eoeg8n" path="res://Telas/Vitoria/Tela_Vitoria.jpg" id="2_dan3q"]
+[ext_resource type="AudioStream" uid="uid://bshf6p2lary1c" path="res://Sons/Vitoria.mp3" id="3_dan3q"]
+[ext_resource type="AudioStream" uid="uid://bo8486h55ih2j" path="res://Sons/Clique.wav" id="4_g3alw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu8ix"]
+bg_color = Color(0.26666668, 0.26666668, 0.26666668, 0.5568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqnfc"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgfml"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0)
+
+[node name="Vitoria" type="Node2D" unique_id=135056236]
+script = ExtResource("1_3l3oi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1901880364]
+position = Vector2(582.5, 319.5)
+scale = Vector2(0.859375, 0.8584656)
+texture = ExtResource("2_dan3q")
+
+[node name="Button" type="Button" parent="." unique_id=359099925]
+offset_left = 383.0
+offset_top = 526.0
+offset_right = 783.0
+offset_bottom = 610.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu8ix")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqnfc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rgfml")
+
+[node name="AudioStreamPlayer_Vitoria" type="AudioStreamPlayer" parent="." unique_id=1536533597]
+stream = ExtResource("3_dan3q")
+
+[node name="AudioStreamPlayer_Clique" type="AudioStreamPlayer" parent="." unique_id=2082325242]
+stream = ExtResource("4_g3alw")
+volume_db = 3.0
+
+[connection signal="pressed" from="Button" to="." method="voltar"]

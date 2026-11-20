@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bpv0qpgd786gv"]
+
+[ext_resource type="Texture2D" uid="uid://raiplh6flng" path="res://Segunda_Fase/Fase_2.png" id="1_as7kd"]
+[ext_resource type="PackedScene" uid="uid://eweaevx55v0k" path="res://Segunda_Fase/portao_abrindo.tscn" id="1_ida82"]
+[ext_resource type="PackedScene" uid="uid://w1q8ofvc4opa" path="res://cena_jogador2.tscn" id="2_70grl"]
+[ext_resource type="PackedScene" uid="uid://dimdvq6x3u6kx" path="res://HUD/cena_hud.tscn" id="4_jtook"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70grl"]
+size = Vector2(1688.5, 104.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
+size = Vector2(1683.125, 62.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ida82"]
+size = Vector2(11.5625, 672.3125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtook"]
+size = Vector2(104.5625, 399.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuw3k"]
+size = Vector2(17.5625, 395)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c1av"]
+size = Vector2(134.8125, 54.5625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q21nt"]
+size = Vector2(251.5, 50.78125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bpmn"]
+size = Vector2(229.75, 49.0625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwsm8"]
+size = Vector2(182.125, 37.0625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14ogm"]
+size = Vector2(258, 48.5)
+
+[node name="Fase2" type="Node2D" unique_id=97714528]
+
+[node name="Cenario" type="StaticBody2D" parent="." unique_id=229873913]
+
+[node name="Sprite2D" type="Sprite2D" parent="Cenario" unique_id=1305664727]
+position = Vector2(844.99994, 180.50003)
+scale = Vector2(1.2574403, 1.2367727)
+texture = ExtResource("1_as7kd")
+
+[node name="PortaoAbrindo" parent="Cenario" unique_id=509535212 instance=ExtResource("1_ida82")]
+position = Vector2(1130, 150)
+
+[node name="Chão" type="CollisionShape2D" parent="Cenario" unique_id=1817704223]
+position = Vector2(843.75, 552.25)
+shape = SubResource("RectangleShape2D_70grl")
+
+[node name="Teto" type="CollisionShape2D" parent="Cenario" unique_id=1324344532]
+position = Vector2(847.4375, -146)
+shape = SubResource("RectangleShape2D_l42ct")
+
+[node name="Teto4" type="CollisionShape2D" parent="Cenario" unique_id=1487124196]
+position = Vector2(1682.2188, 203.84375)
+shape = SubResource("RectangleShape2D_ida82")
+
+[node name="Teto2" type="CollisionShape2D" parent="Cenario" unique_id=608090717]
+position = Vector2(51.71875, 84.25)
+shape = SubResource("RectangleShape2D_jtook")
+
+[node name="Teto3" type="CollisionShape2D" parent="Cenario" unique_id=838392598]
+position = Vector2(6, 457)
+shape = SubResource("RectangleShape2D_xuw3k")
+
+[node name="Plataformas_Aereas" type="StaticBody2D" parent="Cenario" unique_id=291012745]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/Plataformas_Aereas" unique_id=2144480062]
+position = Vector2(172.59375, 253.71875)
+shape = SubResource("RectangleShape2D_5c1av")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cenario/Plataformas_Aereas" unique_id=801906769]
+position = Vector2(496.25, 138.60938)
+shape = SubResource("RectangleShape2D_q21nt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Cenario/Plataformas_Aereas" unique_id=1625114590]
+position = Vector2(906.125, 254.46875)
+shape = SubResource("RectangleShape2D_0bpmn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Cenario/Plataformas_Aereas" unique_id=2071438364]
+position = Vector2(1593.0625, 200.53125)
+shape = SubResource("RectangleShape2D_uwsm8")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Cenario/Plataformas_Aereas" unique_id=1504210512]
+position = Vector2(1307, 141.75)
+shape = SubResource("RectangleShape2D_14ogm")
+
+[node name="Jogador" parent="." unique_id=297150345 instance=ExtResource("2_70grl")]
+position = Vector2(267, 410)
+
+[node name="HUD" parent="." unique_id=1631860032 instance=ExtResource("4_jtook")]
