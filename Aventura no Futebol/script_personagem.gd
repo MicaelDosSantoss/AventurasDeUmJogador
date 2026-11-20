@@ -14,6 +14,7 @@ func _ready() -> void:
 		$Camera2D.limit_left = 30
 		$Camera2D.limit_right = 1680
 
+
 func _process(delta: float) -> void:
 	velocity.x = 0
 	velocity.y += gravidade
@@ -87,6 +88,7 @@ func curar_vida():
 		ScriptGlobal.qtd_vidas += 1
 
 func eliminar_inimigo(body: Node2D) -> void:
+	print(body.name)
 	
 	if( body.name == 'Coletavel (Municao)'):
 		$AudioStreamPlayer_destruir_coletavel.play()
@@ -98,10 +100,16 @@ func eliminar_inimigo(body: Node2D) -> void:
 		if (ScriptGlobal.qtd_garrafas > 0 || ScriptGlobal.qtd_garrafas < 4):
 			print("Pegou o Coletavel...")
 			ScriptGlobal.qtd_garrafas += 1
-	
-	if ( body.name != "Personagem" && body.name != "Cenario" ):
-		body.queue_free()
+			
+	if (body.name == "CharacterBody2D"):
+		var boss = get_tree().current_scene.find_child("CharacterBody2D", true, false)
 		
+		if boss != null:
+			boss.receber_dano(50)
+	
+	if ( body.name != "Personagem" && body.name != "Cenario" && body.name != "CharacterBody2D" ):
+		body.queue_free()
+			
 func receber_dano() -> void:
 	$AudioStreamPlayer_Recebendo_Dano.play()
 	ScriptGlobal.qtd_vidas -= 1

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bouenasxynt08"
+path="res://.godot/imported/Audio_ataqueCarta_V.mp3-71dceb8478929c7073715d4a922aff85.mp3str"
+
+[deps]
+
+source_file="res://Inimigos/Boss A e V/Audio_ataqueCarta_V.mp3"
+dest_files=["res://.godot/imported/Audio_ataqueCarta_V.mp3-71dceb8478929c7073715d4a922aff85.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

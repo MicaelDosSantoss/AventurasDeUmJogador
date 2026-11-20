@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://daawxftpwbty5"
+path="res://.godot/imported/Audio_Dano.mp3-1124cef76a1a88d161661fb270d055d0.mp3str"
+
+[deps]
+
+source_file="res://Inimigos/Boss A e V/Audio_Dano.mp3"
+dest_files=["res://.godot/imported/Audio_Dano.mp3-1124cef76a1a88d161661fb270d055d0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c2uggdsmj64rx"]
+
+[ext_resource type="Script" uid="uid://cech2ac8816gd" path="res://Boss A e V/script_ataque_bola_v.gd" id="1_3oaix"]
+[ext_resource type="Texture2D" uid="uid://cv6u07bvlsxi8" path="res://Boss A e V/SpriteAtaqueBola.png" id="2_3oaix"]
+[ext_resource type="AudioStream" uid="uid://lum0xbdiew7t" path="res://Boss A e V/Audio_toquebola.mp3" id="3_k37nl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g8dd"]
+size = Vector2(465.05255, 280.35086)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv25o"]
+atlas = ExtResource("2_3oaix")
+region = Rect2(0, 0, 384, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3sjk"]
+atlas = ExtResource("2_3oaix")
+region = Rect2(384, 0, 384, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bpnrk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv25o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3sjk")
+}],
+"loop": 2,
+"name": &"AtaqueCarta",
+"speed": 7.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=92583416]
+script = ExtResource("1_3oaix")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1362284959]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=695417363]
+position = Vector2(-14.499998, -8.5)
+scale = Vector2(0.30319154, 0.3031915)
+shape = SubResource("RectangleShape2D_7g8dd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=210961823]
+z_index = 5
+position = Vector2(-34, -12.999998)
+scale = Vector2(0.5169028, 0.40798756)
+sprite_frames = SubResource("SpriteFrames_bpnrk")
+animation = &"AtaqueCarta"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1151180033]
+stream = ExtResource("3_k37nl")
+autoplay = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3rofbr81jxct"
+path="res://.godot/imported/Audio_Transição1.mp3-dc1eb91be5969cefd321e4380b075609.mp3str"
+
+[deps]
+
+source_file="res://Inimigos/Boss A e V/Audio_Transição1.mp3"
+dest_files=["res://.godot/imported/Audio_Transição1.mp3-dc1eb91be5969cefd321e4380b075609.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

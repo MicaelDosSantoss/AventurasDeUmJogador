@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b5nbbjy1a2ivm"]
+
+[ext_resource type="Script" uid="uid://bah221bfjhjpp" path="res://Inimigos/Boss A e V/script_efeitoAchao.gd" id="1_nksor"]
+[ext_resource type="Texture2D" uid="uid://boen011co4ypr" path="res://Inimigos/Boss A e V/SpriteEfeitoChao.png" id="2_nksor"]
+[ext_resource type="AudioStream" uid="uid://bngwlrhtj1ldi" path="res://Inimigos/Boss A e V/Audio_ataqueChao_A.mp3" id="3_e24md"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyy8u"]
+size = Vector2(1267.4686, 470.2285)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed4o8"]
+atlas = ExtResource("2_nksor")
+region = Rect2(286, 0, 1250, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6aelk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed4o8")
+}],
+"loop": 0,
+"name": &"EfeitoChao",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1191923329]
+script = ExtResource("1_nksor")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=730424978]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1433321582]
+position = Vector2(-24.5, 4.5)
+scale = Vector2(0.41894528, 0.41894528)
+shape = SubResource("RectangleShape2D_gyy8u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=775658441]
+scale = Vector2(0.41894528, 0.41894528)
+sprite_frames = SubResource("SpriteFrames_6aelk")
+animation = &"EfeitoChao"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=781858062]
+stream = ExtResource("3_e24md")
+autoplay = true

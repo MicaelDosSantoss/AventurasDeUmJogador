@@ -11,29 +11,29 @@ size = Vector2(25, 17)
 
 [node name="Cartao" type="Node2D" unique_id=297855989]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1427168566]
+[node name="Cartao" type="CharacterBody2D" parent="." unique_id=1427168566]
 script = ExtResource("1_nal2m")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=513421255]
+[node name="Sprite2D" type="Sprite2D" parent="Cartao" unique_id=513421255]
 position = Vector2(12.625, 9.5)
 scale = Vector2(0.28448275, 0.24358974)
 texture = ExtResource("2_olowh")
 region_enabled = true
 region_rect = Rect2(65, 1812, 87, 78)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=539676925]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cartao" unique_id=539676925]
 position = Vector2(13, 9)
 shape = SubResource("RectangleShape2D_l42ct")
 disabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=136671226]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cartao" unique_id=136671226]
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=866547470]
+[node name="Area2D" type="Area2D" parent="Cartao" unique_id=866547470]
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1860072966]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cartao/Area2D" unique_id=1860072966]
 position = Vector2(13.5, 10.5)
 shape = SubResource("RectangleShape2D_5c1av")
 
-[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="dano"]
+[connection signal="body_entered" from="Cartao/Area2D" to="Cartao" method="dano"]

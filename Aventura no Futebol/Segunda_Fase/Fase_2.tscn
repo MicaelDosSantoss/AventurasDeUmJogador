@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://eweaevx55v0k" path="res://Segunda_Fase/portao_abrindo.tscn" id="1_ida82"]
 [ext_resource type="PackedScene" uid="uid://w1q8ofvc4opa" path="res://cena_jogador2.tscn" id="2_70grl"]
 [ext_resource type="PackedScene" uid="uid://dimdvq6x3u6kx" path="res://HUD/cena_hud.tscn" id="4_jtook"]
+[ext_resource type="PackedScene" uid="uid://deekbu833rprd" path="res://Inimigos/Boss A e V/cena_bossA.tscn" id="5_xuw3k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70grl"]
 size = Vector2(1688.5, 104.5)
@@ -27,7 +28,7 @@ size = Vector2(134.8125, 54.5625)
 size = Vector2(251.5, 50.78125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bpmn"]
-size = Vector2(229.75, 49.0625)
+size = Vector2(229.75, 6.0625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwsm8"]
 size = Vector2(182.125, 37.0625)
@@ -78,7 +79,7 @@ position = Vector2(496.25, 138.60938)
 shape = SubResource("RectangleShape2D_q21nt")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Cenario/Plataformas_Aereas" unique_id=1625114590]
-position = Vector2(906.125, 254.46875)
+position = Vector2(906.125, 232.96875)
 shape = SubResource("RectangleShape2D_0bpmn")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Cenario/Plataformas_Aereas" unique_id=2071438364]
@@ -93,3 +94,6 @@ shape = SubResource("RectangleShape2D_14ogm")
 position = Vector2(267, 410)
 
 [node name="HUD" parent="." unique_id=1631860032 instance=ExtResource("4_jtook")]
+
+[node name="Boss Amarelo" parent="." unique_id=535231265 instance=ExtResource("5_xuw3k")]
+position = Vector2(306, 39)

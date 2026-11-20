@@ -3,12 +3,14 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
+	$AnimationPlayer.play("Portão meio aberto")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$AnimationPlayer.play("Portão meio aberto")
+	
+	if ScriptGlobal.portao != false:
+		ScriptGlobal.portao = false
+		$AnimationPlayer.play("Portão Abrindo")
 
 
 func vitoria_do_jogador(body: Node2D) -> void:

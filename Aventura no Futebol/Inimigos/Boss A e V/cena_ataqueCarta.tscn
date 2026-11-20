@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://0jc5h2snyqmy"]
+
+[ext_resource type="Script" uid="uid://byvpmn56t1yi8" path="res://Inimigos/Boss A e V/script_AtaqueCarta.gd" id="1_jeud0"]
+[ext_resource type="Texture2D" uid="uid://crc4eu2nkxqh5" path="res://Inimigos/Boss A e V/SpriteCarta.png" id="2_jeud0"]
+[ext_resource type="AudioStream" uid="uid://bh38af8cfvoy6" path="res://Inimigos/Boss A e V/Audio_ataqueCarta_A.mp3" id="3_i8mts"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foh20"]
+atlas = ExtResource("2_jeud0")
+region = Rect2(32, 0, 376, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugcrs"]
+atlas = ExtResource("2_jeud0")
+region = Rect2(408, 0, 376, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flygu"]
+atlas = ExtResource("2_jeud0")
+region = Rect2(784, 0, 376, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mj16"]
+atlas = ExtResource("2_jeud0")
+region = Rect2(1160, 0, 376, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bpnrk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foh20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugcrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flygu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugcrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mj16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugcrs")
+}],
+"loop": 1,
+"name": &"AtaqueCarta",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g8dd"]
+size = Vector2(281.99994, 201.19293)
+
+[node name="Cena_ataqueCarta" type="Node2D" unique_id=92583416]
+script = ExtResource("1_jeud0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=210961823]
+position = Vector2(43.500008, 119.46807)
+scale = Vector2(0.23138301, 0.23138295)
+sprite_frames = SubResource("SpriteFrames_bpnrk")
+animation = &"AtaqueCarta"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1362284959]
+position = Vector2(51.00001, 121.702095)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=695417363]
+position = Vector2(-5.749998, -8.500008)
+scale = Vector2(0.30319154, 0.3031915)
+shape = SubResource("RectangleShape2D_7g8dd")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=198360677]
+position = Vector2(51.00001, 121.702095)
+stream = ExtResource("3_i8mts")
+autoplay = true

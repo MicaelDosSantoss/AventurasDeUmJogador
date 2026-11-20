@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8hpplen5mw1q"
+path="res://.godot/imported/Audio_Andando3.mp3-b95c415a8e83a08a402dfaf69a2b6576.mp3str"
+
+[deps]
+
+source_file="res://Inimigos/Boss A e V/Audio_Andando3.mp3"
+dest_files=["res://.godot/imported/Audio_Andando3.mp3-b95c415a8e83a08a402dfaf69a2b6576.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

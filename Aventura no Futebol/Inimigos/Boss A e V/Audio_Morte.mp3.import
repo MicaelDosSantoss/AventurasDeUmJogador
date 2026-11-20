@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2w5413bcgu06"
+path="res://.godot/imported/Audio_Morte.mp3-7fcd07dadc6b3ef7d89e161a0ad71a32.mp3str"
+
+[deps]
+
+source_file="res://Inimigos/Boss A e V/Audio_Morte.mp3"
+dest_files=["res://.godot/imported/Audio_Morte.mp3-7fcd07dadc6b3ef7d89e161a0ad71a32.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

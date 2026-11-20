@@ -203,7 +203,7 @@ region_rect = Rect2(528, 80, 72, 147)
 position = Vector2(4.5, 1.75)
 shape = SubResource("RectangleShape2D_64uw6")
 
-[node name="Camera2D" type="Camera2D" parent="Personagem" unique_id=273569552]
+[node name="Camera2D" type="Camera2D" parent="Personagem" unique_id=273569552 groups=["Player"]]
 limit_left = 177
 limit_top = -1000
 limit_right = 7020
