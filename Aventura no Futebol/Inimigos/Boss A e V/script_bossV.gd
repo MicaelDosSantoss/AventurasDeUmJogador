@@ -317,3 +317,4 @@ func morrer():
 		som_morte.play()
 	boss_derrotado.emit()
 	ScriptGlobal.portao = true
+	ScriptGlobal.mensagem = true

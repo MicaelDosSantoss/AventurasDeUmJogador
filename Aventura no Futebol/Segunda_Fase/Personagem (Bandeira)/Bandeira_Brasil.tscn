@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cghcwsck4c8rf"]
+
+[ext_resource type="Texture2D" uid="uid://cc0gie2x8v33h" path="res://Segunda_Fase/Personagem (Bandeira)/Bandeira_Brasil.png" id="1_kx580"]
+[ext_resource type="Script" uid="uid://cm40hgdjvifub" path="res://Segunda_Fase/Personagem (Bandeira)/cenario.gd" id="1_xsgdh"]
+[ext_resource type="Texture2D" uid="uid://bep0uihqfqknw" path="res://Segunda_Fase/Sprint/Mensagem_Primeira.png" id="3_vo7mv"]
+[ext_resource type="Texture2D" uid="uid://dulcvh2o11vb0" path="res://Segunda_Fase/Sprint/Mensagem_Segundaria.png" id="4_r31hw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l42ct"]
+size = Vector2(88, 243)
+
+[sub_resource type="Animation" id="Animation_xsgdh"]
+resource_name = "Animacao_padrao"
+length = 0.7
+loop_mode = 2
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(20, 236, 327, 292), Rect2(352, 253, 312, 275), Rect2(682, 253, 323, 275), Rect2(1012, 253, 327, 275)]
+}
+
+[sub_resource type="Animation" id="Animation_vo7mv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(20, 236, 327, 292)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r31hw"]
+_data = {
+&"Animacao_padrao": SubResource("Animation_xsgdh"),
+&"RESET": SubResource("Animation_vo7mv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c1av"]
+size = Vector2(20, 134.5)
+
+[node name="BandeiraBrasil" type="Node2D" unique_id=971393079]
+
+[node name="Cenario" type="StaticBody2D" parent="." unique_id=1852622075]
+script = ExtResource("1_xsgdh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cenario" unique_id=1388309098]
+position = Vector2(77.25, 70.5)
+scale = Vector2(0.4633028, 0.46917814)
+texture = ExtResource("1_kx580")
+region_enabled = true
+region_rect = Rect2(20, 236, 327, 292)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario" unique_id=638443367]
+position = Vector2(64, 15.5)
+shape = SubResource("RectangleShape2D_l42ct")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cenario" unique_id=1791764815]
+libraries/ = SubResource("AnimationLibrary_r31hw")
+
+[node name="Mensagem_Primeira" type="Sprite2D" parent="Cenario" unique_id=902865555]
+visible = false
+position = Vector2(167, 2.000001)
+scale = Vector2(0.28125, 0.2797619)
+texture = ExtResource("3_vo7mv")
+
+[node name="Mensagem_Segunda" type="Sprite2D" parent="Cenario" unique_id=1688759368]
+visible = false
+position = Vector2(286.62503, -8.687496)
+scale = Vector2(0.41424853, 0.32886907)
+texture = ExtResource("4_r31hw")
+
+[node name="Area2D" type="Area2D" parent="Cenario" unique_id=881147592]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/Area2D" unique_id=534842564]
+position = Vector2(167, 67.75)
+shape = SubResource("RectangleShape2D_5c1av")
+
+[connection signal="body_entered" from="Cenario/Area2D" to="Cenario" method="mensagem"]
+[connection signal="body_exited" from="Cenario/Area2D" to="Cenario" method="sair_mensagem"]

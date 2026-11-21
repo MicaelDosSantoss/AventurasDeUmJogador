@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://eweaevx55v0k" path="res://Segunda_Fase/portao_abrindo.tscn" id="1_ida82"]
 [ext_resource type="PackedScene" uid="uid://w1q8ofvc4opa" path="res://cena_jogador2.tscn" id="2_70grl"]
 [ext_resource type="PackedScene" uid="uid://dimdvq6x3u6kx" path="res://HUD/cena_hud.tscn" id="4_jtook"]
+[ext_resource type="PackedScene" uid="uid://cghcwsck4c8rf" path="res://Segunda_Fase/Personagem (Bandeira)/Bandeira_Brasil.tscn" id="4_uwsm8"]
 [ext_resource type="PackedScene" uid="uid://deekbu833rprd" path="res://Inimigos/Boss A e V/cena_bossA.tscn" id="5_xuw3k"]
 [ext_resource type="AudioStream" uid="uid://bfpxsqta6cfd5" path="res://Sons/Boss_Som.wav" id="7_uwsm8"]
 
@@ -93,14 +94,18 @@ shape = SubResource("RectangleShape2D_uwsm8")
 position = Vector2(1307, 141.75)
 shape = SubResource("RectangleShape2D_14ogm")
 
+[node name="BandeiraBrasil" parent="Cenario" unique_id=971393079 instance=ExtResource("4_uwsm8")]
+position = Vector2(19, 363)
+
 [node name="Jogador" parent="." unique_id=297150345 instance=ExtResource("2_70grl")]
-position = Vector2(267, 410)
+position = Vector2(171, 163)
 
 [node name="HUD" parent="." unique_id=1631860032 instance=ExtResource("4_jtook")]
+position = Vector2(205, -168)
 
 [node name="Boss Amarelo" parent="." unique_id=535231265 instance=ExtResource("5_xuw3k")]
 position = Vector2(306, 39)
 
 [node name="AudioStreamPlayer_Boss" type="AudioStreamPlayer" parent="." unique_id=342440415]
 stream = ExtResource("7_uwsm8")
-volume_db = 3.0
+volume_db = 1.0
